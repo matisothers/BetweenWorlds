@@ -1,0 +1,115 @@
+[gd_scene load_steps=15 format=3 uid="uid://b4iyv6reyvo1"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_212ys"]
+[ext_resource type="Texture2D" uid="uid://bttthbjmqp83t" path="res://spiritwalkidle.png" id="2_e2ijn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lg502"]
+height = 34.0
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_74r47"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f4uaq"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tseyw"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0s758"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1deyv"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1xnl6"]
+states/Start/position = Vector2(215, 100)
+states/idle/node = SubResource("AnimationNodeAnimation_74r47")
+states/idle/position = Vector2(409, 100)
+states/run/node = SubResource("AnimationNodeAnimation_f4uaq")
+states/run/position = Vector2(629, 100)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_tseyw"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0s758"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_1deyv")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_towpy"]
+
+[sub_resource type="Animation" id="Animation_4i3uv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_fstkr"]
+resource_name = "idle"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_5ac6p"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o477v"]
+_data = {
+"RESET": SubResource("Animation_4i3uv"),
+"idle": SubResource("Animation_fstkr"),
+"run": SubResource("Animation_5ac6p")
+}
+
+[node name="PlayerNode" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_212ys")
+
+[node name="Pivot" type="Node2D" parent="Player"]
+unique_name_in_owner = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/Pivot"]
+texture = ExtResource("2_e2ijn")
+hframes = 2
+vframes = 6
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+shape = SubResource("CapsuleShape2D_lg502")
+
+[node name="AnimationTree" type="AnimationTree" parent="Player"]
+tree_root = SubResource("AnimationNodeStateMachine_1xnl6")
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_towpy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_o477v")
+}
