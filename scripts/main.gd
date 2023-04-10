@@ -19,6 +19,6 @@ func _physics_process(delta):
 		tile_map_nature.set_layer_enabled(0,(World.world+1)%2)
 		tile_map_futuristic.set_layer_enabled(0,World.world)
 		
-	tile_map_futuristic.modulate.a = move_toward(tile_map_futuristic.modulate.a,World.world,0.01)
-	tile_map_nature.modulate.a = move_toward(tile_map_nature.modulate.a,(World.world+1)%2,0.01)
+	tile_map_futuristic.modulate.a = move_toward(tile_map_futuristic.modulate.a,World.world,0.1)
+	tile_map_nature.modulate.a = move_toward(tile_map_nature.modulate.a,(World.world+1)%2,0.1)
 	
