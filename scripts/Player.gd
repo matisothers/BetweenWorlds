@@ -4,15 +4,8 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const ACCELERATION = 2000
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-<<<<<<< Updated upstream
 var GRAVITY = 1000
-@onready var pivot = %Pivot
-=======
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var pivot = $Pivot
->>>>>>> Stashed changes
 @onready var animation_tree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
 
@@ -24,15 +17,12 @@ func _ready():
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-<<<<<<< Updated upstream
-		velocity.y += GRAVITY * delta
-=======
-		
+
 		if is_on_wall() and velocity.y>0:
-			velocity.y += (gravity * delta)/10
+			velocity.y += (GRAVITY * delta)/10
 		else:
-			velocity.y += gravity * delta
->>>>>>> Stashed changes
+			velocity.y += GRAVITY * delta
+
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():

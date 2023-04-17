@@ -49,9 +49,6 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dffe3"]
 switch_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_orph6"]
-switch_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r8lag"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2yymh"]
@@ -75,6 +72,8 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ap38o"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sxhvu"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5jdp1"]
 states/End/position = Vector2(910, 180)
 states/Start/position = Vector2(208, 100.5)
@@ -94,8 +93,8 @@ states/run/position = Vector2(740, 197.5)
 "states/start grab/position" = Vector2(506.34, -87.2875)
 "states/start jump/node" = SubResource("AnimationNodeAnimation_oo7td")
 "states/start jump/position" = Vector2(359, 49)
-transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7je75"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_is5i7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_gnd5c"), "idle", "start jump", SubResource("AnimationNodeStateMachineTransition_p4gq4"), "run", "start jump", SubResource("AnimationNodeStateMachineTransition_g1r68"), "start jump", "jump", SubResource("AnimationNodeStateMachineTransition_c7l2m"), "jump", "mid air", SubResource("AnimationNodeStateMachineTransition_0es8c"), "mid air", "fall", SubResource("AnimationNodeStateMachineTransition_dffe3"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_orph6"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_r8lag"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_2yymh"), "idle", "mid air", SubResource("AnimationNodeStateMachineTransition_mfqby"), "start jump", "start grab", SubResource("AnimationNodeStateMachineTransition_84ns8"), "jump", "start grab", SubResource("AnimationNodeStateMachineTransition_36e5v"), "mid air", "start grab", SubResource("AnimationNodeStateMachineTransition_dw33q"), "fall", "start grab", SubResource("AnimationNodeStateMachineTransition_8h70f"), "start grab", "grab", SubResource("AnimationNodeStateMachineTransition_13v21"), "grab", "fall", SubResource("AnimationNodeStateMachineTransition_20xsw"), "grab", "start jump", SubResource("AnimationNodeStateMachineTransition_i5w2r"), "grab", "idle", SubResource("AnimationNodeStateMachineTransition_ap38o")]
-graph_offset = Vector2(155.79, -100.867)
+transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7je75"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_is5i7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_gnd5c"), "idle", "start jump", SubResource("AnimationNodeStateMachineTransition_p4gq4"), "run", "start jump", SubResource("AnimationNodeStateMachineTransition_g1r68"), "start jump", "jump", SubResource("AnimationNodeStateMachineTransition_c7l2m"), "jump", "mid air", SubResource("AnimationNodeStateMachineTransition_0es8c"), "mid air", "fall", SubResource("AnimationNodeStateMachineTransition_dffe3"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_r8lag"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_2yymh"), "idle", "mid air", SubResource("AnimationNodeStateMachineTransition_mfqby"), "start jump", "start grab", SubResource("AnimationNodeStateMachineTransition_84ns8"), "jump", "start grab", SubResource("AnimationNodeStateMachineTransition_36e5v"), "mid air", "start grab", SubResource("AnimationNodeStateMachineTransition_dw33q"), "fall", "start grab", SubResource("AnimationNodeStateMachineTransition_8h70f"), "start grab", "grab", SubResource("AnimationNodeStateMachineTransition_13v21"), "grab", "fall", SubResource("AnimationNodeStateMachineTransition_20xsw"), "grab", "start jump", SubResource("AnimationNodeStateMachineTransition_i5w2r"), "grab", "idle", SubResource("AnimationNodeStateMachineTransition_ap38o"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_sxhvu")]
+graph_offset = Vector2(155.79, 7.02773)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_towpy"]
 
@@ -114,59 +113,11 @@ tracks/0/keys = {
 "values": [4]
 }
 
-[sub_resource type="Animation" id="Animation_fstkr"]
-resource_name = "idle"
-length = 1.6
-loop_mode = 1
-step = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(-0.3, 0, 0.3, 0.6, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [3, 4, 6, 7, 9]
-}
+[sub_resource type="Animation" id="Animation_hbhc8"]
+resource_name = "end grab"
 
-[sub_resource type="Animation" id="Animation_5ac6p"]
-resource_name = "run"
-length = 0.6
-loop_mode = 1
-step = 0.15
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="Animation" id="Animation_da148"]
-resource_name = "jump"
-length = 0.7
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.05, 0.15, 0.25, 0.35, 0.45, 0.55),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [12, 13, 14, 15, 16, 17]
-}
+[sub_resource type="Animation" id="Animation_1nqui"]
+resource_name = "end jump"
 
 [sub_resource type="Animation" id="Animation_da0l7"]
 resource_name = "fall"
@@ -203,9 +154,11 @@ tracks/0/keys = {
 "values": [28, 29, 30]
 }
 
-[sub_resource type="Animation" id="Animation_xumc8"]
-resource_name = "start grab"
+[sub_resource type="Animation" id="Animation_fstkr"]
+resource_name = "idle"
+length = 1.6
 loop_mode = 1
+step = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -213,18 +166,17 @@ tracks/0/path = NodePath("Pivot/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(-0.3, 0, 0.3, 0.6, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [26, 27, 28]
+"values": [3, 4, 6, 7, 9]
 }
 
-[sub_resource type="Animation" id="Animation_hbhc8"]
-resource_name = "end grab"
-
-[sub_resource type="Animation" id="Animation_r46vx"]
-resource_name = "start jump"
-length = 0.2
+[sub_resource type="Animation" id="Animation_da148"]
+resource_name = "jump"
+length = 0.7
+loop_mode = 1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -232,14 +184,11 @@ tracks/0/path = NodePath("Pivot/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.05, 0.15, 0.25, 0.35, 0.45, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [11]
+"values": [12, 13, 14, 15, 16, 17]
 }
-
-[sub_resource type="Animation" id="Animation_1nqui"]
-resource_name = "end jump"
 
 [sub_resource type="Animation" id="Animation_5v5cm"]
 resource_name = "mid air"
@@ -256,6 +205,56 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [17, 18, 19]
+}
+
+[sub_resource type="Animation" id="Animation_5ac6p"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+step = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_xumc8"]
+resource_name = "start grab"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [26, 27, 28]
+}
+
+[sub_resource type="Animation" id="Animation_r46vx"]
+resource_name = "start jump"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o477v"]
@@ -282,7 +281,7 @@ script = ExtResource("1_212ys")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/Pivot"]
 position = Vector2(1, -8)
-scale = Vector2(0.701823, 1.10107)
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_t61ge")
 hframes = 3
 vframes = 11
