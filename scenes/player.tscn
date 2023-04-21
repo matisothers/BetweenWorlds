@@ -1,11 +1,7 @@
-[gd_scene load_steps=47 format=3 uid="uid://b4iyv6reyvo1"]
+[gd_scene load_steps=46 format=3 uid="uid://b4iyv6reyvo1"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_212ys"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_t61ge"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ljnl"]
-radius = 13.0
-height = 38.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lg502"]
 height = 34.0
@@ -291,12 +287,6 @@ hframes = 3
 vframes = 11
 frame = 4
 
-[node name="jump area" type="Area2D" parent="Player/Pivot"]
-
-[node name="collision" type="CollisionShape2D" parent="Player/Pivot/jump area"]
-position = Vector2(3, -3)
-shape = SubResource("CapsuleShape2D_2ljnl")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 visible = false
 position = Vector2(0, -7)
@@ -313,4 +303,8 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -60)
 zoom = Vector2(1.7, 1.7)
+position_smoothing_enabled = true
+drag_vertical_enabled = true
+drag_bottom_margin = 0.0

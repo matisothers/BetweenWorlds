@@ -8,7 +8,7 @@ var GRAVITY = 1000
 @onready var pivot = $Pivot
 @onready var animation_tree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
-@onready var jump_area = $"Pivot/jump area"
+
 
 
 func _ready():
@@ -38,8 +38,8 @@ func _physics_process(delta):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		if is_on_wall_only() and direction:
-			velocity.y = JUMP_VELOCITY * 0.8
-			velocity.x = JUMP_VELOCITY * direction 
+			velocity.y = JUMP_VELOCITY * 0.95
+			velocity.x = JUMP_VELOCITY * direction  * 0.9
 			direction = -direction
 	
 
