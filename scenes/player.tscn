@@ -279,6 +279,10 @@ script = ExtResource("1_212ys")
 
 [node name="Pivot" type="Node2D" parent="Player"]
 
+[node name="RayCastFloor" type="RayCast2D" parent="Player/Pivot"]
+target_position = Vector2(0, 17)
+collision_mask = 3
+
 [node name="Sprite2D" type="Sprite2D" parent="Player/Pivot"]
 position = Vector2(1, -8)
 scale = Vector2(1.1, 1.1)
@@ -287,8 +291,12 @@ hframes = 3
 vframes = 11
 frame = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="RayCastWall" type="RayCast2D" parent="Player/Pivot"]
 visible = false
+target_position = Vector2(20, 0)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_lg502")
 

@@ -8,6 +8,9 @@ var GRAVITY = 1000
 @onready var pivot = $Pivot
 @onready var animation_tree = $AnimationTree
 @onready var playback = animation_tree.get("parameters/playback")
+@onready var wall = $Pivot/RayCastWall
+@onready var floor = $Pivot/RayCastFloor
+
 
 
 
@@ -20,7 +23,7 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 
-		if is_on_wall() and velocity.y>0 and direction:
+		if wall.is_colliding() and velocity.y>0 and direction:
 			velocity.y += (GRAVITY * delta)/5
 		else:
 			velocity.y += GRAVITY * delta
@@ -35,9 +38,9 @@ func _physics_process(delta):
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump"):
-		if is_on_floor():
+		if floor.is_colliding() or is_on_floor():
 			velocity.y = JUMP_VELOCITY
-		if is_on_wall_only() and direction:
+		if wall.is_colliding() and direction:
 			velocity.y = JUMP_VELOCITY * 0.95
 			velocity.x = JUMP_VELOCITY * direction  * 0.9
 			direction = -direction
