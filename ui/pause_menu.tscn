@@ -1,12 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceu81odq7w06k"]
+[gd_scene load_steps=6 format=3 uid="uid://bwfjua4i04mge"]
 
-[ext_resource type="Theme" uid="uid://byhrt46vfxamt" path="res://resources/theme.tres" id="1_ahgns"]
-[ext_resource type="Script" path="res://ui/mainmenu.gd" id="2_7xa5e"]
-[ext_resource type="FontFile" uid="uid://c0cno3c1vrvf6" path="res://DungeonFont.ttf" id="2_wkx8v"]
-[ext_resource type="Script" path="res://ui/Label.gd" id="3_sc4ov"]
-
-[sub_resource type="RichTextEffect" id="RichTextEffect_6j2m0"]
-script = ExtResource("3_sc4ov")
+[ext_resource type="FontFile" uid="uid://c0cno3c1vrvf6" path="res://DungeonFont.ttf" id="1_q5s8b"]
+[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_y1uub"]
 
 [sub_resource type="Animation" id="Animation_cdgn1"]
 length = 0.001
@@ -117,17 +112,24 @@ _data = {
 "fade_in": SubResource("Animation_obtun")
 }
 
-[node name="Mainmenu" type="MarginContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Pause Menu" type="MarginContainer"]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -114.5
+offset_right = 65.0
+offset_bottom = 114.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ahgns")
-script = ExtResource("2_7xa5e")
+script = ExtResource("1_y1uub")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
+size_flags_horizontal = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
@@ -142,47 +144,60 @@ theme_override_constants/margin_bottom = 20
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 self_modulate = Color(1, 0.427451, 0.505882, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
-theme_override_constants/shadow_outline_size = 0
 theme_override_constants/outline_size = 0
-bbcode_enabled = true
-text = "[ghost freq=5.0 span=10.0] Between Worlds [/ghost]"
-custom_effects = [SubResource("RichTextEffect_6j2m0")]
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1_q5s8b")
+theme_override_font_sizes/font_size = 40
+text = "Pause"
 
-[node name="play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 0
 theme_override_constants/h_separation = 0
-theme_override_fonts/font = ExtResource("2_wkx8v")
+theme_override_fonts/font = ExtResource("1_q5s8b")
 theme_override_font_sizes/font_size = 25
-text = "play
+text = "Resume
 "
 
-[node name="exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Retry" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/outline_size = 0
-theme_override_constants/h_separation = 3
-theme_override_fonts/font = ExtResource("2_wkx8v")
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_q5s8b")
 theme_override_font_sizes/font_size = 25
-text = "Exit
+text = "Retry
+"
+
+[node name="rmainmenu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_fonts/font = ExtResource("1_q5s8b")
+theme_override_font_sizes/font_size = 25
+text = "Return to main menu
 "
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
 modulate = Color(1, 0.537255, 0.32549, 1)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_wkx8v")
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_q5s8b")
 theme_override_font_sizes/font_size = 26
-text = "surrender is for the weak
+text = "get good
 "
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+root_node = NodePath("../../../..")
 libraries = {
 "": SubResource("AnimationLibrary_3myo2")
 }

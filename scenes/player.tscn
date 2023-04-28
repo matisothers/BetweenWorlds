@@ -1,7 +1,8 @@
-[gd_scene load_steps=46 format=3 uid="uid://b4iyv6reyvo1"]
+[gd_scene load_steps=47 format=3 uid="uid://b4iyv6reyvo1"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_212ys"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_t61ge"]
+[ext_resource type="PackedScene" uid="uid://bwfjua4i04mge" path="res://ui/pause_menu.tscn" id="3_oekgg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lg502"]
 height = 34.0
@@ -316,3 +317,17 @@ zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 drag_bottom_margin = 0.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player"]
+
+[node name="Pause Menu" parent="Player/CanvasLayer" instance=ExtResource("3_oekgg")]
+visible = false
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
