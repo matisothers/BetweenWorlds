@@ -1,14 +1,17 @@
 extends VBoxContainer
 var speed = 175
 var direction = 1
+
 @onready var label = $Label
 @onready var play = %play
 @onready var exit = %exit
 @onready var label_2 = $Label2
 
+@onready var animation_player = $AnimationPlayer
 
 
 func _process(delta):
+
 	if label.position.y < 225:
 	#se puede tener direction random con randi_range(-1,1)
 		var offset = Vector2(0, speed * delta * direction)
@@ -29,7 +32,7 @@ func _process(delta):
 	if abs(label.position.y) >10:
 		pass
 		#
-	
+
 	"""
 	for child in get_children():
 		child.position += offset
@@ -37,10 +40,16 @@ func _process(delta):
 		if abs(child.position.y) > 40:
 			direction *= -1
 	"""
+	pass
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label.position.y = -20
-	pass # Replace with function body.
+	animation_player.play("fade in")
+	"""label.modulate=Color("ff5591",0)
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "modulate", Color(255,85,145,254),5)"""	
+	pass
+	# Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

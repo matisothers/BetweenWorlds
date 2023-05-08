@@ -1,10 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceu81odq7w06k"]
+[gd_scene load_steps=9 format=3 uid="uid://ceu81odq7w06k"]
 
 [ext_resource type="Script" path="res://ui/mainmenu.gd" id="2_7xa5e"]
 [ext_resource type="Script" path="res://ui/MovingBackrounMenu.gd" id="2_l0rcc"]
 [ext_resource type="FontFile" uid="uid://c0cno3c1vrvf6" path="res://DungeonFont.ttf" id="2_wkx8v"]
-[ext_resource type="Texture2D" uid="uid://wuugqgoo54ov" path="res://test2.jpeg" id="3_dij1g"]
+[ext_resource type="Texture2D" uid="uid://ln083k3m83nc" path="res://Flat Night 4 BG.png" id="3_rvpfp"]
 [ext_resource type="Script" path="res://ui/VBoxContainer.gd" id="3_xc0bm"]
+[ext_resource type="AudioStream" uid="uid://dkcthbyxr47vo" path="res://TITLE_SCREEN.wav" id="6_1lceq"]
+
+[sub_resource type="Animation" id="Animation_dsibr"]
+resource_name = "fade in"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/VBoxContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.333333, 0.568627, 0.32549), Color(1, 0.333333, 0.568627, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sbbux"]
+_data = {
+"fade in": SubResource("Animation_dsibr")
+}
 
 [node name="Mainmenu" type="ParallaxBackground"]
 offset = Vector2(2.08165e-12, 2.08165e-12)
@@ -14,15 +36,18 @@ scroll_limit_end = Vector2(1900, 1900)
 script = ExtResource("2_7xa5e")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-position = Vector2(-39, -15)
-scale = Vector2(1.16244, 1.48)
-motion_mirroring = Vector2(950, 2.08165e-12)
+motion_mirroring = Vector2(2560, 2.08165e-12)
 script = ExtResource("2_l0rcc")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(499.138, 214.189)
-scale = Vector2(0.764702, 0.780391)
-texture = ExtResource("3_dij1g")
+texture = ExtResource("3_rvpfp")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(1280, 2.08165e-12)
+texture = ExtResource("3_rvpfp")
+centered = false
+flip_h = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -42,12 +67,13 @@ theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+modulate = Color(1, 0.333333, 0.568627, 1)
 layout_mode = 2
 size_flags_horizontal = 4
 script = ExtResource("3_xc0bm")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
-self_modulate = Color(1, 0.333333, 0.568627, 1)
+modulate = Color(1, 0.333333, 0.568627, 1)
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -91,3 +117,14 @@ theme_override_fonts/font = ExtResource("2_wkx8v")
 theme_override_font_sizes/font_size = 26
 text = "surrender is for the weak
 "
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_sbbux")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1lceq")
+volume_db = -11.795
+autoplay = true
