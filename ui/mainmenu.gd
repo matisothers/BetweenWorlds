@@ -1,7 +1,11 @@
 
-extends MarginContainer
+
+extends ParallaxBackground
 @onready var play = %play
 @onready var exit = %exit
+@onready var label = $PanelContainer/MarginContainer/VBoxContainer/Label
+
+
 
 
 

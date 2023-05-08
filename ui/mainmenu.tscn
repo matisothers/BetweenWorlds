@@ -1,139 +1,42 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceu81odq7w06k"]
+[gd_scene load_steps=6 format=3 uid="uid://ceu81odq7w06k"]
 
-[ext_resource type="Theme" uid="uid://byhrt46vfxamt" path="res://resources/theme.tres" id="1_ahgns"]
 [ext_resource type="Script" path="res://ui/mainmenu.gd" id="2_7xa5e"]
+[ext_resource type="Script" path="res://ui/MovingBackrounMenu.gd" id="2_l0rcc"]
 [ext_resource type="FontFile" uid="uid://c0cno3c1vrvf6" path="res://DungeonFont.ttf" id="2_wkx8v"]
-[ext_resource type="Script" path="res://ui/Label.gd" id="3_sc4ov"]
+[ext_resource type="Texture2D" uid="uid://wuugqgoo54ov" path="res://test2.jpeg" id="3_dij1g"]
+[ext_resource type="Script" path="res://ui/VBoxContainer.gd" id="3_xc0bm"]
 
-[sub_resource type="RichTextEffect" id="RichTextEffect_6j2m0"]
-script = ExtResource("3_sc4ov")
-
-[sub_resource type="Animation" id="Animation_cdgn1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/Label:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/Resume:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 48)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/rmainmenu:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 124)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/Label2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 162)]
-}
-
-[sub_resource type="Animation" id="Animation_obtun"]
-resource_name = "fade_in"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/Label:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/Resume:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 48), Vector2(0, 48)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/rmainmenu:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.2, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 124), Vector2(0, 124)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PanelContainer/MarginContainer/VBoxContainer/Label2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.2, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 162), Vector2(0, 162)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3myo2"]
-_data = {
-"RESET": SubResource("Animation_cdgn1"),
-"fade_in": SubResource("Animation_obtun")
-}
-
-[node name="Mainmenu" type="MarginContainer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_ahgns")
+[node name="Mainmenu" type="ParallaxBackground"]
+offset = Vector2(2.08165e-12, 2.08165e-12)
+transform = Transform2D(1, 2.08165e-12, 2.08165e-12, 1, 2.08165e-12, 2.08165e-12)
+scroll_limit_begin = Vector2(2.08165e-12, 2.08165e-12)
+scroll_limit_end = Vector2(1900, 1900)
 script = ExtResource("2_7xa5e")
 
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(-39, -15)
+scale = Vector2(1.16244, 1.48)
+motion_mirroring = Vector2(950, 2.08165e-12)
+script = ExtResource("2_l0rcc")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(499.138, 214.189)
+scale = Vector2(0.764702, 0.780391)
+texture = ExtResource("3_dij1g")
+
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 2
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 3.0
+offset_top = 110.0
+offset_right = 1286.0
+offset_bottom = 817.0
+scale = Vector2(0.886709, 0.570685)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 51
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
@@ -141,32 +44,38 @@ theme_override_constants/margin_bottom = 20
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+script = ExtResource("3_xc0bm")
 
-[node name="Label" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer"]
-self_modulate = Color(1, 0.427451, 0.505882, 1)
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+self_modulate = Color(1, 0.333333, 0.568627, 1)
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 2
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 0
-theme_override_constants/shadow_outline_size = 0
 theme_override_constants/outline_size = 0
-bbcode_enabled = true
-text = "[ghost freq=5.0 span=10.0] Between Worlds [/ghost]"
-custom_effects = [SubResource("RichTextEffect_6j2m0")]
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("2_wkx8v")
+theme_override_font_sizes/font_size = 100
+text = "Between Worlds "
+horizontal_alignment = 1
 
 [node name="play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/outline_size = 0
 theme_override_constants/h_separation = 0
 theme_override_fonts/font = ExtResource("2_wkx8v")
 theme_override_font_sizes/font_size = 25
-text = "play
+text = "Play
 "
 
 [node name="exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/outline_size = 0
 theme_override_constants/h_separation = 3
 theme_override_fonts/font = ExtResource("2_wkx8v")
@@ -175,14 +84,10 @@ text = "Exit
 "
 
 [node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
-modulate = Color(1, 0.537255, 0.32549, 1)
+modulate = Color(0, 0, 0, 1)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_wkx8v")
 theme_override_font_sizes/font_size = 26
 text = "surrender is for the weak
 "
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_3myo2")
-}
