@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dqwnx122t82gs"]
+[gd_scene load_steps=15 format=3 uid="uid://dqwnx122t82gs"]
 
 [ext_resource type="Script" path="res://ui/mainmenu.gd" id="2_7xa5e"]
 [ext_resource type="Script" path="res://ui/MovingBackrounMenu.gd" id="2_l0rcc"]
@@ -10,7 +10,19 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w82qa"]
 bg_color = Color(0, 0.662745, 0.827451, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ns7u0"]
+bg_color = Color(0.960784, 0.792157, 0.756863, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mge6e"]
+bg_color = Color(0.858824, 0.466667, 0.392157, 0.4)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p665k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0swy"]
+bg_color = Color(0.960784, 0.792157, 0.756863, 0.4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hk7ac"]
+bg_color = Color(0.858824, 0.466667, 0.392157, 0.4)
 
 [sub_resource type="Animation" id="Animation_dsibr"]
 resource_name = "fade in"
@@ -47,7 +59,7 @@ script = ExtResource("2_l0rcc")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(-2.60727e-12, 1.19209e-07)
-scale = Vector2(0.9, 0.336)
+scale = Vector2(0.903, 0.337)
 texture = ExtResource("3_6s4fw")
 centered = false
 
@@ -105,6 +117,8 @@ size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("5_b72kn")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_w82qa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ns7u0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mge6e")
 text = "Play"
 
 [node name="exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
@@ -116,6 +130,8 @@ theme_override_constants/h_separation = 3
 theme_override_fonts/font = ExtResource("5_b72kn")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxTexture_p665k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h0swy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hk7ac")
 text = "Exit
 "
 
@@ -143,11 +159,11 @@ modulate = Color(1, 0.403922, 0.701961, 1)
 self_modulate = Color(0.701961, 0.32549, 0.498039, 1)
 position = Vector2(562, 4)
 scale = Vector2(13.96, 12.96)
-amount = 4000
-lifetime = 7.0
+amount = 5000
+lifetime = 9.0
 emission_shape = 3
 emission_rect_extents = Vector2(600, 1)
-gravity = Vector2(-100, 980)
+gravity = Vector2(-200, 980)
 scale_amount_min = 0.0
-scale_amount_max = 3.0
-color = Color(1, 0.407843, 0.482353, 1)
+scale_amount_max = 6.0
+color = Color(0.878431, 0, 0.290196, 1)
