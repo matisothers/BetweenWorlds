@@ -1,5 +1,5 @@
 extends VBoxContainer
-var speed = 175
+var speed = 50
 var direction = 1
 
 @onready var label = $Label
@@ -10,9 +10,10 @@ var direction = 1
 @onready var animation_player = $AnimationPlayer
 
 
+
 func _process(delta):
 
-	if label.position.y < 225:
+	if label.position.y < 200:
 	#se puede tener direction random con randi_range(-1,1)
 		var offset = Vector2(0, speed * delta * direction)
 		var x_offset = Vector2(speed * delta * randi_range(-1,1),0)
@@ -23,8 +24,10 @@ func _process(delta):
 		play.position -= offset
 		exit.position -= offset
 		label_2.position -= offset
-	else: 
-		if abs(label.position.x) >5:
+	else:
+
+		
+		if abs(label.position.x) >3:
 			direction *= -1
 		var x_offset = Vector2(speed/8 * delta * direction,0)
 		label.position += x_offset
@@ -43,8 +46,11 @@ func _process(delta):
 	pass
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	label.position.y = -20
 	animation_player.play("fade in")
+	
+
 	"""label.modulate=Color("ff5591",0)
 	var tween = get_tree().create_tween()
 	tween.tween_property(label, "modulate", Color(255,85,145,254),5)"""	
