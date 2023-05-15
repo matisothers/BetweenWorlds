@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://h1j2x1x03pqt" path="res://futuristic/1 Tiles/IndustrialTile_20.png" id="2_hui56"]
 [ext_resource type="Texture2D" uid="uid://bosnr52trhqqn" path="res://futuristic/1 Tiles/IndustrialTile_05.png" id="3_dxk71"]
 [ext_resource type="Texture2D" uid="uid://qitsg6vaw2cf" path="res://nature/Assets/Assets.png" id="4_y5gbp"]
-[ext_resource type="PackedScene" uid="uid://b4iyv6reyvo1" path="res://scenes/player.tscn" id="5_kx4td"]
 [ext_resource type="Texture2D" uid="uid://bv8mx4k8obqti" path="res://futuristic/3 Objects/Flag.png" id="7_55l5t"]
+[ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="8_t4y5x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kcu7a"]
 texture = ExtResource("2_hui56")
@@ -52,6 +52,8 @@ texture = ExtResource("3_dxk71")
 
 [sub_resource type="TileSet" id="TileSet_4vpix"]
 physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = ""
+custom_data_layer_0/type = 0
 sources/2 = SubResource("TileSetAtlasSource_d0a5m")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uubit"]
@@ -1768,9 +1770,9 @@ tile_set = SubResource("TileSet_24kmc")
 format = 2
 layer_0/tile_data = PackedInt32Array(2359327, 786432, 2, 2424863, 786432, 3, 2359328, 851968, 2, 2424864, 851968, 3, 2359329, 786432, 2, 2424865, 786432, 3, 2359330, 851968, 2, 2424866, 851968, 3, 2359331, 786432, 2, 2424867, 786432, 3, 2359332, 851968, 2, 2424868, 851968, 3, 2359333, 786432, 2, 2424869, 786432, 3, 2359334, 851968, 2, 2424870, 851968, 3, 2359335, 786432, 2, 2424871, 786432, 3, 2359336, 851968, 2, 2424872, 851968, 3, 2359337, 786432, 2, 2424873, 786432, 3, 2359338, 851968, 2, 2424874, 851968, 3, 2359339, 786432, 2, 2424875, 786432, 3, 2359340, 851968, 2, 2424876, 851968, 3, 2359341, 786432, 2, 2424877, 786432, 3, 2359342, 851968, 2, 2424878, 851968, 3, 2359343, 786432, 2, 2424879, 786432, 3, 2359344, 851968, 2, 2424880, 851968, 3, 2359345, 786432, 2, 2424881, 786432, 3, 2359346, 851968, 2, 2424882, 851968, 3, 1310751, 786432, 2, 1376287, 786432, 3, 1310752, 851968, 2, 1376288, 851968, 3, 1310753, 786432, 2, 1376289, 786432, 3, 1310754, 851968, 2, 1376290, 851968, 3, 2162717, 786432, 2, 2228253, 786432, 3, 2162718, 851968, 2, 2228254, 851968, 3, 2162719, 786432, 2, 2228255, 786432, 3, 2162720, 851968, 2, 2228256, 851968, 3, 1835046, 786432, 2, 1900582, 786432, 3, 1835047, 851968, 2, 1900583, 851968, 3, 1835048, 786432, 2, 1900584, 786432, 3, 1835049, 851968, 2, 1900585, 851968, 3, 1835050, 786432, 2, 1900586, 786432, 3, 1835051, 851968, 2, 1900587, 851968, 3, 1507373, 786432, 2, 1572909, 786432, 3, 1507374, 851968, 2, 1572910, 851968, 3, 1507375, 786432, 2, 1572911, 786432, 3, 1507376, 851968, 2, 1572912, 851968, 3)
 
-[node name="PlayerNode" parent="." instance=ExtResource("5_kx4td")]
-position = Vector2(298, 552)
-
 [node name="Flag" type="Sprite2D" parent="."]
 position = Vector2(914, 196)
 texture = ExtResource("7_55l5t")
+
+[node name="Player" parent="." instance=ExtResource("8_t4y5x")]
+position = Vector2(321, 567)
