@@ -297,7 +297,7 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_lfv1s")
 hframes = 3
 vframes = 11
-frame = 9
+frame = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
@@ -315,7 +315,6 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(0, -60)
 zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 drag_vertical_enabled = true

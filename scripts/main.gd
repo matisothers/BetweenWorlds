@@ -15,8 +15,8 @@ var world = 0
 func _ready():
 
 	player.set_camera_limits(
-		margins.get_node("sup_izq").position,
-		margins.get_node("inf_der").position
+		margins.get_node("sup_izq").global_position,
+		margins.get_node("inf_der").global_position
 	)
 	
 	maps[0].set_layer_enabled(0,true)
