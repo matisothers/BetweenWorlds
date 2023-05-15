@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var tile_map_nature = $TileMap_Nature
 @onready var tile_map_futuristic = $TileMap_Futuristic
+@onready var player = $Player
+@onready var margins = $margins
 
 
 
@@ -12,6 +14,11 @@ var world = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
+	player.set_camera_limits(
+		margins.get_node("sup_izq").position,
+		margins.get_node("inf_der").position
+	)
+	
 	maps[0].set_layer_enabled(0,true)
 	maps[1].set_layer_enabled(0,false)
 	
