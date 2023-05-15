@@ -29,6 +29,7 @@ var can_dash = true
 @onready var STATES = $STATES
 @onready var RayCasts = $raycasts
 @onready var pivot = $Pivot
+@onready var camera = $Camera2D
 
 
 func _ready():
@@ -115,5 +116,12 @@ func get_next_to_wall():
 			else:
 				return Vector2.LEFT
 	return null
+	
+func set_camera_limits(sup_izq:Vector2, inf_der:Vector2):
+	camera.limit_bottom = inf_der.y
+	camera.limit_left= sup_izq.x
+	camera.limit_right= inf_der.x
+	camera.limit_top= sup_izq.y
+	
 	
 	

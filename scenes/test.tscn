@@ -1776,3 +1776,11 @@ texture = ExtResource("6_oroqb")
 
 [node name="Player" parent="." instance=ExtResource("7_lyb0w")]
 position = Vector2(321, 567)
+
+[node name="margins" type="Node" parent="."]
+
+[node name="sup_izq" type="Marker2D" parent="margins"]
+position = Vector2(-4, -8)
+
+[node name="inf_der" type="Marker2D" parent="margins"]
+position = Vector2(1160, 654)
