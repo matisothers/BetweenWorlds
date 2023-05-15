@@ -1,6 +1,8 @@
 extends "state.gd"
 
 @onready var CoyoteTimer = $CoyoteTimer
+@onready var animation_tree = $"../../AnimationTree"
+@onready var playback = animation_tree.get("parameters/playback")
 @export var coyote_duration = 0.2
 var can_jump = true
 
@@ -14,6 +16,7 @@ func update(delta):
 		return STATES.DASH
 		
 	if Player.get_next_to_wall() != null:
+		playback.travel("grab")
 		return STATES.SLIDE
 		
 	if Player.jump_input_actuation == true and can_jump:
@@ -22,6 +25,7 @@ func update(delta):
 	return null
 	
 func enter_state():
+	playback.travel("fall")
 	if Player.previous_state == STATES.IDLE or Player.previous_state == STATES.MOVE or Player.previous_state == STATES.SLIDE:
 		can_jump = true
 		

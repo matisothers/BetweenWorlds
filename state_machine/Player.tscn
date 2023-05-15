@@ -108,7 +108,7 @@ states/run/position = Vector2(740, 197.5)
 "states/start jump/node" = SubResource("AnimationNodeAnimation_oo7td")
 "states/start jump/position" = Vector2(359, 49)
 transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7je75"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_is5i7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_gnd5c"), "idle", "start jump", SubResource("AnimationNodeStateMachineTransition_p4gq4"), "run", "start jump", SubResource("AnimationNodeStateMachineTransition_g1r68"), "start jump", "jump", SubResource("AnimationNodeStateMachineTransition_c7l2m"), "jump", "mid air", SubResource("AnimationNodeStateMachineTransition_0es8c"), "mid air", "fall", SubResource("AnimationNodeStateMachineTransition_dffe3"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_r8lag"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_2yymh"), "idle", "mid air", SubResource("AnimationNodeStateMachineTransition_mfqby"), "start jump", "start grab", SubResource("AnimationNodeStateMachineTransition_84ns8"), "jump", "start grab", SubResource("AnimationNodeStateMachineTransition_36e5v"), "mid air", "start grab", SubResource("AnimationNodeStateMachineTransition_dw33q"), "fall", "start grab", SubResource("AnimationNodeStateMachineTransition_8h70f"), "start grab", "grab", SubResource("AnimationNodeStateMachineTransition_13v21"), "grab", "fall", SubResource("AnimationNodeStateMachineTransition_20xsw"), "grab", "start jump", SubResource("AnimationNodeStateMachineTransition_i5w2r"), "grab", "idle", SubResource("AnimationNodeStateMachineTransition_ap38o"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_sxhvu")]
-graph_offset = Vector2(155.79, 7.02773)
+graph_offset = Vector2(170.25, -134.58)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_pjkou"]
 
@@ -297,7 +297,7 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("2_lfv1s")
 hframes = 3
 vframes = 11
-frame = 4
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
@@ -306,6 +306,7 @@ shape = SubResource("CapsuleShape2D_2ddl2")
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_6kjab")
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_pjkou")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

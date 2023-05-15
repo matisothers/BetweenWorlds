@@ -1,5 +1,7 @@
 extends "state.gd"
 
+@onready var animation_tree = $"../../AnimationTree"
+@onready var playback = animation_tree.get("parameters/playback")
 
 func update(delta):
 	Player.gravity(delta)
@@ -16,4 +18,5 @@ func update(delta):
 	return null
 
 func enter_state():
+	playback.travel("run")
 	Player.can_dash = true
