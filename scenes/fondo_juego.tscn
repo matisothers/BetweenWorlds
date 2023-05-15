@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnoaoh7rlc07c"]
+
+[ext_resource type="Texture2D" uid="uid://dlfoqt5mu4qm8" path="res://Background_resources/fondo_juego/Urban-landscape-files/layers/buildings-layer.png" id="1_snhss"]
+[ext_resource type="Texture2D" uid="uid://be8i2fa165mdb" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 01.png" id="2_jpoa1"]
+[ext_resource type="Texture2D" uid="uid://c7l0aqfwl3he7" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 02.png" id="3_2t5pd"]
+[ext_resource type="Texture2D" uid="uid://b77vyk06j22qq" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 04.png" id="4_adqua"]
+[ext_resource type="Texture2D" uid="uid://cxlbo7huma7qq" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 03.png" id="5_bilj3"]
+[ext_resource type="Texture2D" uid="uid://b0l378cm81l8a" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 05.png" id="6_w208i"]
+[ext_resource type="Texture2D" uid="uid://bqqil0a1tmgyn" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 06.png" id="7_g76g3"]
+
+[node name="fondo_juego" type="Node2D"]
+
+[node name="Buildings-layer" type="Sprite2D" parent="."]
+self_modulate = Color(0.780392, 0.156863, 0.368627, 1)
+position = Vector2(273.659, 459.832)
+scale = Vector2(2.55564, 2.49352)
+texture = ExtResource("1_snhss")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.960784, 0.615686, 1, 1)
+self_modulate = Color(1, 1, 1, 0.498039)
+position = Vector2(552.801, 337.5)
+scale = Vector2(2.31328, 2.64453)
+texture = ExtResource("2_jpoa1")
+
+[node name="HillsLayer02" type="Sprite2D" parent="."]
+modulate = Color(1, 0.552941, 1, 1)
+position = Vector2(539, 377)
+scale = Vector2(2.26398, 2.34088)
+texture = ExtResource("3_2t5pd")
+
+[node name="HillsLayer05" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0.996078, 1)
+position = Vector2(519, 547)
+scale = Vector2(2.18108, 0.99328)
+texture = ExtResource("4_adqua")
+
+[node name="HillsLayer04" type="Sprite2D" parent="."]
+modulate = Color(0.537255, 0.713726, 0.756863, 1)
+position = Vector2(552.985, 422.55)
+scale = Vector2(2.30865, 1.99649)
+texture = ExtResource("5_bilj3")
+
+[node name="HillsLayer06" type="Sprite2D" parent="."]
+position = Vector2(551.75, 336.75)
+scale = Vector2(2.30566, 2.69336)
+texture = ExtResource("6_w208i")
+
+[node name="HillsLayer07" type="Sprite2D" parent="."]
+position = Vector2(301, 544)
+texture = ExtResource("7_g76g3")
