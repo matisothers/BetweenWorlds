@@ -1,5 +1,2 @@
-Ray cast para saltos y saltos pared (Mati)
-salto minimo
 cliping
-menus (pausa e inicio)
-Zonas de muerte 
+Zonas de muerte
