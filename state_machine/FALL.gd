@@ -10,13 +10,13 @@ func update(delta):
 	Player.gravity(delta)
 	player_movement()
 	if Player.is_on_floor():
+		playback.travel("idle")
 		return STATES.IDLE
 		
 	if Player.dash_input and Player.can_dash:
 		return STATES.DASH
 		
 	if Player.get_next_to_wall() != null:
-		playback.travel("grab")
 		return STATES.SLIDE
 		
 	if Player.jump_input_actuation == true and can_jump:

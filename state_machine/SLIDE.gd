@@ -19,6 +19,7 @@ func update(delta):
 	
 func slide_movement(delta):
 	if Player.climb_input:
+		playback.travel("grab")
 		if Player.movement_input.y < 0:
 			Player.velocity.y = -climb_speed
 		elif  Player.movement_input.y > 0:

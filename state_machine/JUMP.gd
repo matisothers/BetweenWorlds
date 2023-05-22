@@ -6,6 +6,8 @@ extends "state.gd"
 func update(delta):
 	Player.gravity(delta)
 	player_movement()
+	if Player.get_next_to_wall() != null:
+		return STATES.SLIDE
 	if Player.velocity.y > 0:
 		return STATES.FALL
 		

@@ -20,5 +20,6 @@ func update(delta):
 	return null
 	
 func enter_state():
-	Player.can_dash = true
 	playback.travel("idle")
+	Player.can_dash = true
+	

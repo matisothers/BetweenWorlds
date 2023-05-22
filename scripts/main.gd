@@ -4,6 +4,7 @@ extends Node2D
 @onready var tile_map_futuristic = $TileMap_Futuristic
 @onready var player = $Player
 @onready var margins = $margins
+var can_change = true
 
 
 
@@ -19,20 +20,29 @@ func _ready():
 		margins.get_node("inf_der").global_position
 	)
 	
-	maps[0].set_layer_enabled(0,true)
-	maps[1].set_layer_enabled(0,false)
+	maps[0].tile_set.set("physics_layer_0/collision_layer", 17)
+	maps[1].tile_set.set("physics_layer_0/collision_layer", 16)
+	maps[0].modulate.a = 1
+	maps[1].modulate.a = 0
 	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if Input.is_action_just_pressed("change"):
+	if Input.is_action_just_pressed("change") and can_change:
+		can_change = false
 		world =  (world + 1) % 2
-		maps[world].set_layer_enabled(0,true)
+		maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
+		for rc in player.get_node("antiCliping").get_children():
+			rc.force_raycast_update()
+			if rc.is_colliding():
+				world =  (world + 1) % 2
+				maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
 		
 
 	maps[1].modulate.a = move_toward(maps[1].modulate.a,world,0.03)
 	maps[0].modulate.a = move_toward(maps[0].modulate.a,(world+1)%2,0.03)
 	
 	if maps[(world + 1) % 2].modulate.a < 0.3:
-		maps[(world + 1) % 2].set_layer_enabled(0,false)
+		can_change = true
+		maps[(world + 1) % 2].tile_set.set("physics_layer_0/collision_layer", 16)
