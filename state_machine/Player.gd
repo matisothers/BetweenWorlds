@@ -12,7 +12,15 @@ var jump_input = false
 var jump_input_actuation = false
 var climb_input = false
 var dash_input = false
+var activate_jump = false
 
+#Jump_stats
+var tile_size = 8
+var MAX_JUMP_HEIGHT = tile_size*7+ 0.35
+var MIN_JUMP_HEIGHT = tile_size*2 + 0.35
+var jump_duration = .3
+var max_jump_velocity = 0
+var min_jump_velocity = 0
 
 #Movimiento del player
 const SPEED = 150.0
@@ -30,6 +38,7 @@ var can_dash = true
 @onready var RayCasts = $raycasts
 @onready var pivot = $Pivot
 @onready var camera = $Camera2D
+@onready var pre_jump_window_timer = $Timers/PreJumpWindowTimer
 
 
 func _ready():
@@ -39,7 +48,7 @@ func _ready():
 	
 	current_state = STATES.IDLE
 	previous_state = STATES.IDLE
-
+	set_velocity_values()
 func _physics_process(delta):
 	player_input()
 	change_state(current_state.update(delta))
@@ -55,6 +64,11 @@ func _physics_process(delta):
 func gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity_value * delta
+		
+func set_velocity_values():
+	gravity_value = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)
+	max_jump_velocity = -sqrt(2*gravity_value*MAX_JUMP_HEIGHT)
+	min_jump_velocity = -sqrt(2*gravity_value*MIN_JUMP_HEIGHT)
 
 
 func change_state(input_state):
@@ -104,7 +118,7 @@ func player_input():
 		dash_input = true
 	else:
 		dash_input = false
-	
+	jump_logic()
 
 
 func get_next_to_wall():
@@ -123,5 +137,14 @@ func set_camera_limits(sup_izq:Vector2, inf_der:Vector2):
 	camera.limit_right= inf_der.x
 	camera.limit_top= sup_izq.y
 	
+func jump_logic():
+	if jump_input_actuation:
+		activate_jump = true
+		pre_jump_window_timer.start()
+		
 	
 	
+
+
+func _on_pre_jump_window_timer_timeout():
+	activate_jump = false

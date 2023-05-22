@@ -19,7 +19,7 @@ func update(delta):
 	if Player.get_next_to_wall() != null:
 		return STATES.SLIDE
 		
-	if Player.jump_input_actuation == true and can_jump:
+	if Player.activate_jump and can_jump:
 		return STATES.JUMP
 		
 	return null
