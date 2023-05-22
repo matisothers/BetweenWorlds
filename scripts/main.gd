@@ -5,7 +5,10 @@ extends Node2D
 @onready var player = $Player
 @onready var margins = $margins
 var can_change = true
-
+@onready var botom = margins.get_node("inf_der").global_position.y
+@onready var top = margins.get_node("sup_izq").global_position.y
+@onready var left = margins.get_node("sup_izq").global_position.x
+@onready var right = margins.get_node("inf_der").global_position.x
 
 
 @onready var maps = [$TileMap_Nature,$TileMap_Futuristic]
@@ -29,6 +32,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
 	if Input.is_action_just_pressed("change") and can_change:
 		can_change = false
 		world =  (world + 1) % 2
@@ -36,11 +40,6 @@ func _physics_process(delta):
 		if player.get_node("AntiClipingZone").has_overlapping_bodies():
 			world =  (world + 1) % 2
 			maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
-		#for rc in player.get_node("antiCliping").get_children():
-		#	rc.force_raycast_update()
-		#	if rc.is_colliding():
-		#		world =  (world + 1) % 2
-		#		maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
 		
 
 	maps[1].modulate.a = move_toward(maps[1].modulate.a,world,0.03)
@@ -49,3 +48,6 @@ func _physics_process(delta):
 	if maps[(world + 1) % 2].modulate.a < 0.3:
 		can_change = true
 		maps[(world + 1) % 2].tile_set.set("physics_layer_0/collision_layer", 16)
+		
+	if player.global_position.y > botom+75:
+		get_tree().reload_current_scene() 
