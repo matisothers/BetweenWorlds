@@ -327,24 +327,20 @@ offset_bottom = 0.0
 [node name="raycasts" type="Node2D" parent="."]
 
 [node name="TopR" type="RayCast2D" parent="raycasts"]
-position = Vector2(0, -25)
+position = Vector2(0, -23)
 target_position = Vector2(17, 0)
-collision_mask = 3
 
 [node name="BottomL" type="RayCast2D" parent="raycasts"]
 position = Vector2(0, 11)
 target_position = Vector2(-17, 0)
-collision_mask = 3
 
 [node name="TopL" type="RayCast2D" parent="raycasts"]
-position = Vector2(0, -25)
+position = Vector2(0, -23)
 target_position = Vector2(-17, 0)
-collision_mask = 3
 
 [node name="BottomR" type="RayCast2D" parent="raycasts"]
 position = Vector2(0, 11)
 target_position = Vector2(17, 0)
-collision_mask = 3
 
 [node name="STATES" type="Node" parent="."]
 script = ExtResource("4_dwgsv")
@@ -379,30 +375,11 @@ offset_bottom = -30.0
 text = "STATE
 "
 
-[node name="antiCliping" type="Node2D" parent="."]
-
-[node name="RayCast2D4" type="RayCast2D" parent="antiCliping"]
-position = Vector2(0, 3)
-target_position = Vector2(-10, 0)
-
-[node name="RayCast2D3" type="RayCast2D" parent="antiCliping"]
-position = Vector2(0, 3)
-target_position = Vector2(10, 0)
-
-[node name="RayCast2D2" type="RayCast2D" parent="antiCliping"]
-position = Vector2(0, -9)
-target_position = Vector2(-10, 0)
-
-[node name="RayCast2D" type="RayCast2D" parent="antiCliping"]
-position = Vector2(0, -9)
-target_position = Vector2(10, 0)
+[node name="AntiClipingZone" type="Area2D" parent="."]
+collision_layer = 16
 collision_mask = 16
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 16
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AntiClipingZone"]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_cgf5g")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)

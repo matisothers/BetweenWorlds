@@ -33,11 +33,14 @@ func _physics_process(delta):
 		can_change = false
 		world =  (world + 1) % 2
 		maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
-		for rc in player.get_node("antiCliping").get_children():
-			rc.force_raycast_update()
-			if rc.is_colliding():
-				world =  (world + 1) % 2
-				maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
+		if player.get_node("AntiClipingZone").has_overlapping_bodies():
+			world =  (world + 1) % 2
+			maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
+		#for rc in player.get_node("antiCliping").get_children():
+		#	rc.force_raycast_update()
+		#	if rc.is_colliding():
+		#		world =  (world + 1) % 2
+		#		maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
 		
 
 	maps[1].modulate.a = move_toward(maps[1].modulate.a,world,0.03)
