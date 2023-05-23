@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=57 format=3 uid="uid://deyxggi7limtc"]
+=======
+[gd_scene load_steps=61 format=3 uid="uid://deyxggi7limtc"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://state_machine/Player.gd" id="1_whayj"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_lfv1s"]
@@ -274,7 +278,11 @@ _data = {
 "start jump": SubResource("Animation_r46vx")
 }
 
+<<<<<<< Updated upstream
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgf5g"]
+=======
+[sub_resource type="Environment" id="Environment_gtvb6"]
+>>>>>>> Stashed changes
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_whayj")
@@ -309,6 +317,9 @@ zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 drag_vertical_enabled = true
 drag_bottom_margin = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Camera2D"]
+environment = SubResource("Environment_gtvb6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

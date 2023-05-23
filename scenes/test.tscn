@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dcwxphywvwdoh" path="res://futuristic/2 Background/Background.png" id="2_btuso"]
 [ext_resource type="Texture2D" uid="uid://h1j2x1x03pqt" path="res://futuristic/1 Tiles/IndustrialTile_20.png" id="3_dskxf"]
 [ext_resource type="Texture2D" uid="uid://bosnr52trhqqn" path="res://futuristic/1 Tiles/IndustrialTile_05.png" id="4_j046n"]
-[ext_resource type="Texture2D" uid="uid://qitsg6vaw2cf" path="res://nature/Assets/Assets.png" id="5_62b6y"]
 [ext_resource type="Texture2D" uid="uid://bv8mx4k8obqti" path="res://futuristic/3 Objects/Flag.png" id="6_oroqb"]
 [ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="7_lyb0w"]
 
@@ -56,8 +55,11 @@ custom_data_layer_0/name = ""
 custom_data_layer_0/type = 0
 sources/2 = SubResource("TileSetAtlasSource_d0a5m")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6sj3"]
+load_path = "res://.godot/imported/Assets.png-6dcf06b89f07c005b6131456b57f8116.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uubit"]
-texture = ExtResource("5_62b6y")
+texture = SubResource("CompressedTexture2D_d6sj3")
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
