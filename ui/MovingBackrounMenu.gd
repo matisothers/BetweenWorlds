@@ -1,6 +1,6 @@
 extends ParallaxLayer
 
-var BackgroundSpeed = 0
+var BackgroundSpeed = -100
 
 
 # Called when the node enters the scene tree for the first time.
