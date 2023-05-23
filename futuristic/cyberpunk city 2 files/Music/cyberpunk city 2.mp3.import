@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxf3icie8kur7"
+path="res://.godot/imported/cyberpunk city 2.mp3-4646e7069936249e34a648eb52b7b46d.mp3str"
+
+[deps]
+
+source_file="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.mp3"
+dest_files=["res://.godot/imported/cyberpunk city 2.mp3-4646e7069936249e34a648eb52b7b46d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
