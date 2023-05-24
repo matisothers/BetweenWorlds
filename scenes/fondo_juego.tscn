@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://bqqil0a1tmgyn" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 06.png" id="7_g76g3"]
 
 [node name="fondo_juego" type="Node2D"]
-visible = false
 position = Vector2(35, -6)
 
 [node name="Sky-layer" type="Sprite2D" parent="."]
@@ -27,7 +26,6 @@ texture = ExtResource("1_qagl6")
 flip_h = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(35, -6)

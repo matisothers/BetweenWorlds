@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5m3ddfrf8ckk"]
+[gd_scene load_steps=22 format=3 uid="uid://5m3ddfrf8ckk"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_a06g4"]
 [ext_resource type="PackedScene" uid="uid://dnoaoh7rlc07c" path="res://scenes/fondo_juego.tscn" id="2_xy1in"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://rprk4atgq6in" path="res://resources/Background/4.png" id="6_tjp40"]
 [ext_resource type="Texture2D" uid="uid://ds2ld1b2buw0r" path="res://Background_resources/fondo_juego/test/files/clouds.png" id="6_wkspj"]
 [ext_resource type="Texture2D" uid="uid://kndkbjrp7ay3" path="res://Background_resources/fondo_juego/test/files/Tileset.png" id="7_ihkrs"]
-[ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="7_wlftn"]
 [ext_resource type="Texture2D" uid="uid://cc86hhdfqyn03" path="res://Background_resources/fondo_juego/Alien tileset/Alien tileset/Alien tileset.png" id="8_pj2rv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3ega"]
@@ -1493,10 +1492,6 @@ position = Vector2(576, 510)
 scale = Vector2(2.4, 1.5226)
 texture = ExtResource("6_tjp40")
 offset = Vector2(0, 2.08165e-12)
-
-[node name="Player" parent="." instance=ExtResource("7_wlftn")]
-position = Vector2(305, 536)
-scale = Vector2(1.16, 1.16)
 
 [node name="TileMap_Universal" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_s1cdf")
