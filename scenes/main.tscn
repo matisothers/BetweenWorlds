@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://5m3ddfrf8ckk"]
+[gd_scene load_steps=23 format=3 uid="uid://5m3ddfrf8ckk"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_a06g4"]
 [ext_resource type="PackedScene" uid="uid://dnoaoh7rlc07c" path="res://scenes/fondo_juego.tscn" id="2_xy1in"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ds2ld1b2buw0r" path="res://Background_resources/fondo_juego/test/files/clouds.png" id="6_wkspj"]
 [ext_resource type="Texture2D" uid="uid://kndkbjrp7ay3" path="res://Background_resources/fondo_juego/test/files/Tileset.png" id="7_ihkrs"]
 [ext_resource type="Texture2D" uid="uid://cc86hhdfqyn03" path="res://Background_resources/fondo_juego/Alien tileset/Alien tileset/Alien tileset.png" id="8_pj2rv"]
+[ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="12_u4yn2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3ega"]
 texture = ExtResource("4_kdcrt")
@@ -1523,6 +1524,9 @@ layer_1/tile_data = PackedInt32Array()
 [node name="World_Futuristic" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5tfrj")
 format = 2
+
+[node name="Player" parent="." instance=ExtResource("12_u4yn2")]
+position = Vector2(278, 50)
 
 [node name="margins" type="Node" parent="."]
 
