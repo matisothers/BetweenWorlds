@@ -50,7 +50,8 @@ texture = ExtResource("4_j046n")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_4vpix"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 17
+physics_layer_0/collision_mask = 17
 custom_data_layer_0/name = ""
 custom_data_layer_0/type = 0
 sources/2 = SubResource("TileSetAtlasSource_d0a5m")
@@ -1071,7 +1072,8 @@ texture = SubResource("CompressedTexture2D_d6sj3")
 20:21/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_24kmc"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 17
+physics_layer_0/collision_mask = 17
 sources/0 = SubResource("TileSetAtlasSource_uubit")
 
 [node name="Main" type="Node2D"]
