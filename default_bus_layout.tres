@@ -1,0 +1,29 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://hwwnr18dh18"]
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_asfpb"]
+resource_name = "LowPassFilter"
+
+[sub_resource type="AudioEffectLowShelfFilter" id="AudioEffectLowShelfFilter_w3lig"]
+resource_name = "LowShelfFilter"
+
+[sub_resource type="AudioEffectEQ" id="AudioEffectEQ_5ckfe"]
+resource_name = "EQ"
+
+[sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_w4730"]
+resource_name = "Distortion"
+
+[resource]
+bus/1/name = &"Music"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectLowPassFilter_asfpb")
+bus/1/effect/0/enabled = true
+bus/1/effect/1/effect = SubResource("AudioEffectLowShelfFilter_w3lig")
+bus/1/effect/1/enabled = true
+bus/1/effect/2/effect = SubResource("AudioEffectEQ_5ckfe")
+bus/1/effect/2/enabled = true
+bus/1/effect/3/effect = SubResource("AudioEffectDistortion_w4730")
+bus/1/effect/3/enabled = true
