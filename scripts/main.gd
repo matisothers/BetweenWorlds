@@ -12,6 +12,7 @@ var can_change = true
 
 @onready var fondo_juego = $fondo_juego
 @onready var parallax_background = $fondo2/ParallaxBackground
+@onready var parallax_background_2 = $fondo2/ParallaxBackground2
 
 @onready var maps = [$TileMap_Nature,$TileMap_Futuristic]
 var world = 0
@@ -44,10 +45,12 @@ func _physics_process(delta):
 		else:
 			if 	fondo_juego.visible == false:
 				fondo_juego.visible = true
-				parallax_background.visible=false 
+				parallax_background.visible =false 
+				parallax_background_2.visible = false
 			else:
 				fondo_juego.visible = false
-				parallax_background.visible=true
+				parallax_background.visible =true 
+				parallax_background_2.visible = true
 
 	maps[1].modulate.a = move_toward(maps[1].modulate.a,world,0.03)
 	maps[0].modulate.a = move_toward(maps[0].modulate.a,(world+1)%2,0.03)

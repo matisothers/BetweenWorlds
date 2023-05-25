@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dqwnx122t82gs"]
 
 [ext_resource type="Script" path="res://ui/mainmenu.gd" id="2_7xa5e"]
-[ext_resource type="Script" path="res://ui/MovingBackrounMenu.gd" id="2_l0rcc"]
+[ext_resource type="Script" path="res://ui/movingbackgroundmenu.gd" id="2_qs1hy"]
 [ext_resource type="Texture2D" uid="uid://wetjf58ccjvo" path="res://pexels-eberhard-grossgasteiger-2088170.jpg" id="3_6s4fw"]
 [ext_resource type="Script" path="res://ui/VBoxContainer.gd" id="3_xc0bm"]
 [ext_resource type="FontFile" uid="uid://mymj0wih086" path="res://resources/fonts/1/Beholden-Bold.ttf" id="5_b72kn"]
@@ -55,7 +55,7 @@ script = ExtResource("2_7xa5e")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
 position = Vector2(-2.08165e-12, -2.08165e-12)
 motion_mirroring = Vector2(2304, 2.08165e-12)
-script = ExtResource("2_l0rcc")
+script = ExtResource("2_qs1hy")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(-2.60727e-12, 1.19209e-07)

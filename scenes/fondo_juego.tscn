@@ -8,80 +8,97 @@
 [ext_resource type="Texture2D" uid="uid://bqqil0a1tmgyn" path="res://Background_resources/fondo_juego/Free Pixel Art Hill/PNG/Hills Layer 06.png" id="7_g76g3"]
 
 [node name="fondo_juego" type="Node2D"]
-visible = false
 position = Vector2(35, -6)
 
-[node name="Sky-layer" type="Sprite2D" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_offset = Vector2(2.08165e-12, 2.08165e-12)
+motion_mirroring = Vector2(2346, 2.08165e-12)
+
+[node name="Sky-layer" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0.768627, 0.72549, 0.992157, 1)
-position = Vector2(555, 342)
+position = Vector2(590, 336)
 scale = Vector2(10.5, 3.001)
 texture = ExtResource("1_qagl6")
+offset = Vector2(0, -150)
 
-[node name="Sky-layer2" type="Sprite2D" parent="."]
+[node name="Sky-layer2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0.768627, 0.72549, 0.992157, 1)
 show_behind_parent = true
-position = Vector2(1726, 341)
+position = Vector2(1761, 335)
 scale = Vector2(10.5, 3.001)
 texture = ExtResource("1_qagl6")
+offset = Vector2(0, -150)
 flip_h = true
 
-[node name="Buildings-layer" type="Sprite2D" parent="."]
+[node name="Buildings-layer" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 self_modulate = Color(0.780392, 0.156863, 0.368627, 1)
-position = Vector2(389.159, 379.832)
+position = Vector2(424.159, 373.832)
 scale = Vector2(3.75876, 3.73383)
 texture = ExtResource("1_snhss")
+offset = Vector2(0, -80)
 
-[node name="Buildings-layer2" type="Sprite2D" parent="."]
+[node name="Buildings-layer2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 self_modulate = Color(0.780392, 0.156863, 0.368627, 1)
-position = Vector2(1002, 437)
+position = Vector2(1037, 431)
 scale = Vector2(3.75876, 3.73383)
 texture = ExtResource("1_snhss")
+offset = Vector2(0, -80)
 flip_h = true
 
-[node name="HillsLayer02" type="Sprite2D" parent="."]
+[node name="HillsLayer02" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(1, 0.552941, 1, 1)
-position = Vector2(560, 377)
+position = Vector2(595, 371)
 scale = Vector2(2.31388, 2.36283)
 texture = ExtResource("3_2t5pd")
+offset = Vector2(0, -125)
 
-[node name="HillsLayer04" type="Sprite2D" parent="."]
+[node name="HillsLayer04" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0.905882, 0.498039, 0.709804, 0.792157)
-position = Vector2(544, 432)
+position = Vector2(579, 426)
 scale = Vector2(2.27217, 1.94316)
 texture = ExtResource("5_bilj3")
+offset = Vector2(0, -125)
 
-[node name="HillsLayer05" type="Sprite2D" parent="."]
-modulate = Color(0.756863, 0.564706, 1, 1)
-position = Vector2(527, 548)
-scale = Vector2(2.17452, 0.977109)
-texture = ExtResource("4_adqua")
-
-[node name="HillsLayer07" type="Sprite2D" parent="."]
-position = Vector2(301, 544)
-texture = ExtResource("7_g76g3")
-
-[node name="HillsLayer022" type="Sprite2D" parent="."]
+[node name="HillsLayer022" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(1, 0.552941, 1, 1)
-position = Vector2(1719, 377.16)
+position = Vector2(1754, 371.16)
 scale = Vector2(2.3213, 2.36283)
 texture = ExtResource("3_2t5pd")
+offset = Vector2(0, -125)
 flip_h = true
 
-[node name="HillsLayer042" type="Sprite2D" parent="."]
+[node name="HillsLayer042" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0.905882, 0.498039, 0.709804, 0.792157)
-position = Vector2(1723.98, 422.71)
+position = Vector2(1758.98, 416.71)
 scale = Vector2(2.33016, 1.98667)
 texture = ExtResource("5_bilj3")
+offset = Vector2(0, -125)
 flip_h = true
 
-[node name="HillsLayer052" type="Sprite2D" parent="."]
+[node name="HillsLayer05" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color(0.756863, 0.564706, 1, 1)
-position = Vector2(1714, 548.16)
+position = Vector2(561, 568)
 scale = Vector2(2.17452, 0.977109)
 texture = ExtResource("4_adqua")
+offset = Vector2(0, -275)
+
+[node name="HillsLayer07" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(336, 538)
+texture = ExtResource("7_g76g3")
+offset = Vector2(0, -275)
+
+[node name="HillsLayer052" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color(0.756863, 0.564706, 1, 1)
+position = Vector2(1749, 568)
+scale = Vector2(2.17452, 0.977109)
+texture = ExtResource("4_adqua")
+offset = Vector2(0, -275)
 flip_h = true
 
-[node name="HillsLayer072" type="Sprite2D" parent="."]
-position = Vector2(1472, 544.16)
+[node name="HillsLayer072" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1507, 538.16)
 texture = ExtResource("7_g76g3")
+offset = Vector2(0, -275)
 flip_h = true
