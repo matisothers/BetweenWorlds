@@ -1,16 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0tbhdphlbwjt"]
+[gd_scene load_steps=4 format=3 uid="uid://d0tbhdphlbwjt"]
 
 [ext_resource type="Script" path="res://dialogos.gd" id="1_xl027"]
-[ext_resource type="FontFile" uid="uid://c0cno3c1vrvf6" path="res://DungeonFont.ttf" id="2_g42rp"]
+[ext_resource type="FontFile" uid="uid://mymj0wih086" path="res://resources/fonts/1/Beholden-Bold.ttf" id="2_c2gwy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1hue"]
+bg_color = Color(1, 1, 1, 0)
 
 [node name="dialogos" type="Node2D"]
 script = ExtResource("1_xl027")
 
 [node name="Label" type="Label" parent="."]
-modulate = Color(0, 0, 0, 1)
-offset_right = 351.0
-offset_bottom = 157.0
-theme_override_fonts/font = ExtResource("2_g42rp")
+offset_left = -68.0
+offset_top = -76.0
+offset_right = 69.0
+offset_bottom = -40.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_c2gwy")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1hue")
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -3,12 +3,13 @@ extends Node2D
 @onready var next_message = $next_message
 
 var messages = [
-	"My First Message", 
-	"Second Message For You"
+	"Hey soy dios", 
+	"whats up",
+	"a quien no le gusta la bachata"
 ]
 
-var typing_speed = .1
-var read_time = 2
+var typing_speed = .05
+var read_time = 1.5
 
 var current_message = 0
 var display = ""

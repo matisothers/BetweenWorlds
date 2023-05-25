@@ -32,6 +32,10 @@ var current_state = null
 var previous_state = null
 #Mecanicas
 var can_dash = true
+#dialogues
+var dialogue = preload("res://dialogos.tscn")
+#jugador 
+@onready var player = $"."
 
 #Nodos
 @onready var STATES = $STATES
@@ -40,8 +44,12 @@ var can_dash = true
 @onready var camera = $Camera2D
 @onready var pre_jump_window_timer = $Timers/PreJumpWindowTimer
 
-
+var dialogue_1 = true
+var dialogue_2 = true
+var dialogue_3 = true
+var dialogue_4 = true
 func _ready():
+
 	for state in STATES.get_children():
 		state.STATES = STATES
 		state.Player = self
@@ -56,8 +64,31 @@ func _physics_process(delta):
 	pivot.scale.x = last_direction.x
 	
 
-	$LABEL.text = str(current_state.get_name())
+	$LABEL.text = str(current_state.get_name(), player.position.x)
 	move_and_slide()
+	
+	if (player.position.x >=250 and dialogue_1==true):
+		var d= dialogue.instantiate()
+		d.messages = ["HEYY YOU", "YES YOU", "who I am?", "I'm Jesus", "nah kidding", "I'm the 44 president Barack Obama",
+		"press space to jump", "not sure what space is but press it"]
+		add_child(d)
+		dialogue_1=false
+	if (player.position.x >=520 and dialogue_2==true):
+		var d= dialogue.instantiate()
+		d.messages = [ "That looks kinda far","you can change the world you are", "just press X", "this platform is special", "it is in
+		both worlds"]
+		add_child(d)
+		dialogue_2=false
+	if (player.position.x >=750 and dialogue_3==true):
+		var d= dialogue.instantiate()
+		d.messages = [ "JUMPP AND SWITCH WORLDSSSS"]
+		add_child(d)
+		dialogue_3=false
+	if (player.position.x >=1100 and dialogue_4==true):
+		var d= dialogue.instantiate()
+		d.messages = [ "Try to complete the level", "the blood moon is rising once again"]
+		add_child(d)
+		dialogue_4=false
 	
 
 	
@@ -141,7 +172,7 @@ func jump_logic():
 	if jump_input_actuation:
 		activate_jump = true
 		pre_jump_window_timer.start()
-		
+
 	
 	
 
