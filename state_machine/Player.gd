@@ -64,7 +64,7 @@ func _physics_process(delta):
 	pivot.scale.x = last_direction.x
 	
 
-	$LABEL.text = str(current_state.get_name(), player.position.x)
+	$LABEL.text = str(current_state.get_name())
 	move_and_slide()
 	
 	if (player.position.x >=250 and dialogue_1==true):
