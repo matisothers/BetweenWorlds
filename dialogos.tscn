@@ -4,19 +4,28 @@
 [ext_resource type="FontFile" uid="uid://mymj0wih086" path="res://resources/fonts/1/Beholden-Bold.ttf" id="2_c2gwy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1hue"]
-bg_color = Color(1, 1, 1, 0)
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="dialogos" type="Node2D"]
 script = ExtResource("1_xl027")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -68.0
-offset_top = -76.0
-offset_right = 69.0
-offset_bottom = -40.0
+offset_left = -66.0
+offset_top = 34.0
+offset_right = 71.0
+offset_bottom = 70.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_c2gwy")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 10
 theme_override_styles/normal = SubResource("StyleBoxFlat_m1hue")
 horizontal_alignment = 1
 vertical_alignment = 1

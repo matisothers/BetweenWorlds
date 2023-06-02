@@ -74,6 +74,8 @@ func _physics_process(delta):
 		add_child(d)
 		dialogue_1=false
 	if (player.position.x >=520 and dialogue_2==true):
+		#dialogue.stop_dialogue()
+		#dialogue.stop_dialogue()
 		var d= dialogue.instantiate()
 		d.messages = [ "That looks kinda far","you can change the world you are", "just press X", "this platform is special", "it is in
 		both worlds"]
