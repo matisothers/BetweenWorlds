@@ -96,7 +96,10 @@ func _physics_process(delta):
 	
 func gravity(delta):
 	if not is_on_floor():
-		velocity.y += gravity_value * delta
+		if current_state==STATES.SLIDE:
+			velocity.y += gravity_value * delta *0.1
+		else:
+			velocity.y += gravity_value * delta
 		
 func set_velocity_values():
 	gravity_value = 2 * MAX_JUMP_HEIGHT / pow(jump_duration,2)

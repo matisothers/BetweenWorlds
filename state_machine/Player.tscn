@@ -328,19 +328,19 @@ offset_bottom = 0.0
 
 [node name="TopR" type="RayCast2D" parent="raycasts"]
 position = Vector2(10, -16)
-target_position = Vector2(11, 0)
+target_position = Vector2(9, 0)
 
 [node name="BottomL" type="RayCast2D" parent="raycasts"]
 position = Vector2(-10, 3)
-target_position = Vector2(-11, 0)
+target_position = Vector2(-9, 0)
 
 [node name="TopL" type="RayCast2D" parent="raycasts"]
 position = Vector2(-10, -16)
-target_position = Vector2(-12, 0)
+target_position = Vector2(-9, 0)
 
 [node name="BottomR" type="RayCast2D" parent="raycasts"]
 position = Vector2(10, 3)
-target_position = Vector2(10, 0)
+target_position = Vector2(9, 0)
 
 [node name="STATES" type="Node" parent="."]
 script = ExtResource("4_dwgsv")
@@ -365,7 +365,7 @@ script = ExtResource("9_65sfo")
 [node name="SLIDE" parent="STATES" instance=ExtResource("10_42cw0")]
 script = ExtResource("10_ct7f2")
 climb_speed = 80
-slide_friction = -10
+slide_friction = 0
 
 [node name="LABEL" type="Label" parent="."]
 offset_left = -20.0
