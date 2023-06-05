@@ -57,7 +57,6 @@ custom_data_layer_0/type = 0
 sources/2 = SubResource("TileSetAtlasSource_d0a5m")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d6sj3"]
-load_path = "res://.godot/imported/Assets.png-6dcf06b89f07c005b6131456b57f8116.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uubit"]
 texture = SubResource("CompressedTexture2D_d6sj3")

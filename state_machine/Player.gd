@@ -91,7 +91,7 @@ func _physics_process(delta):
 		d.messages = [ "Try to complete the level", "the blood moon is rising once again"]
 		add_child(d)
 		dialogue_4=false
-	
+	print(velocity.y)
 
 	
 func gravity(delta):
