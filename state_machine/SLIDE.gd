@@ -3,7 +3,7 @@ extends "state.gd"
 @onready var animation_tree = $"../../AnimationTree"
 @onready var playback = animation_tree.get("parameters/playback")
 @export var climb_speed = 80
-@export var slide_friction = 0.7
+@export var slide_friction = 0
 
 func update(delta):
 	
