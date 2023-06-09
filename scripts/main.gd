@@ -17,8 +17,8 @@ var can_change = true
 @onready var maps = [$TileMap_Nature,$TileMap_Futuristic]
 var world = 0
 
-
-
+var dialogue = preload("res://dialogos.tscn")
+var dialogue_clip = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -43,6 +43,11 @@ func _physics_process(delta):
 		if player.get_node("AntiClipingZone").has_overlapping_bodies():
 			world =  (world + 1) % 2
 			maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
+			if dialogue_clip==true:
+				var d= dialogue.instantiate()
+				d.messages = ["DO YOU WANT TO EAT THE EARTH OF THE OTHER PLANET?" ]
+				add_child(d)
+				dialogue_clip = false
 		else:
 			if 	fondo_juego.visible == false:
 				fondo_juego.visible = true
@@ -52,6 +57,7 @@ func _physics_process(delta):
 				fondo_juego.visible = false
 				parallax_background.visible =true 
 				parallax_background_2.visible = true
+			dialogue_clip= true
 
 	maps[1].modulate.a = move_toward(maps[1].modulate.a,world,0.03)
 	maps[0].modulate.a = move_toward(maps[0].modulate.a,(world+1)%2,0.03)
