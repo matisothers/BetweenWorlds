@@ -32,7 +32,6 @@ func _ready():
 	maps[0].modulate.a = 1
 	maps[1].modulate.a = 0
 	
-	player.current_dialogue = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,11 +44,6 @@ func _physics_process(delta):
 		if player.get_node("AntiClipingZone").has_overlapping_bodies():
 			world =  (world + 1) % 2
 			maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
-			if dialogue_clip==true:
-				var d= dialogue.instantiate()
-				d.messages = ["DO YOU WANT TO EAT THE EARTH OF THE OTHER PLANET?" ]
-				add_child(d)
-				dialogue_clip = false
 		else:
 			if 	fondo_juego.visible == false:
 				fondo_juego.visible = true

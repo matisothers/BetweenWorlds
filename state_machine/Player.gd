@@ -44,10 +44,9 @@ var dialogue = preload("res://dialogos.tscn")
 @onready var camera = $Camera2D
 @onready var pre_jump_window_timer = $Timers/PreJumpWindowTimer
 
-var dialogue_1 = true
-var dialogue_2 = true
-var dialogue_3 = true
-var dialogue_4 = true
+var current_dialogue = 0
+var d
+
 func _ready():
 
 	for state in STATES.get_children():
@@ -67,36 +66,38 @@ func _physics_process(delta):
 	$LABEL.text = str(current_state.get_name())
 	move_and_slide()
 	
-	if (player.position.x >=250 and dialogue_1==true):
-		var d= dialogue.instantiate()
+	if (player.position.x >=250 and current_dialogue == 1):
+		d = dialogue.instantiate()
 		d.messages = ["HEYY YOU", "YES YOU", "who I am?", "I'm Jesus", "nah kidding", "I'm the 44 president Barack Obama",
 		"press space to jump", "not sure what space is but press it"]
 		add_child(d)
-		dialogue_1=false
-	if (player.position.x >=520 and dialogue_2==true):
-		#dialogue.stop_dialogue()
-		#dialogue.stop_dialogue()
-		var d= dialogue.instantiate()
+		current_dialogue+=1
+
+	if (player.position.x >=520 and current_dialogue == 2):
+		remove_child(d)
+		d= dialogue.instantiate()
 		d.messages = [ "That looks kinda far","you can change the world you are", "just press X", "this platform is special", "it is in
 		both worlds"]
 		add_child(d)
-		dialogue_2=false
-	if (player.position.x >=750 and dialogue_3==true):
-		var d= dialogue.instantiate()
+		current_dialogue+=1
+	if (player.position.x >=750 and current_dialogue == 3):
+		remove_child(d)
+		d= dialogue.instantiate()
 		d.messages = [ "JUMPP AND SWITCH WORLDSSSS"]
 		add_child(d)
-		dialogue_3=false
-	if (player.position.x >=1100 and dialogue_4==true):
-		var d= dialogue.instantiate()
+		current_dialogue+=1
+	if (player.position.x >=1100 and current_dialogue == 4):
+		remove_child(d)
+		d= dialogue.instantiate()
 		d.messages = [ "Try to complete the level", "the blood moon is rising once again"]
 		add_child(d)
-		dialogue_4=false
-	print(velocity.y)
+		current_dialogue+=1
+
 
 	
 func gravity(delta):
 	if not is_on_floor():
-		if current_state==STATES.SLIDE:
+		if current_state==STATES.SLIDE and velocity.y>0:
 			velocity.y += gravity_value * delta *0.1
 		else:
 			velocity.y += gravity_value * delta
