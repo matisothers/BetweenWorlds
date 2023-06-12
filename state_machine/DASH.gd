@@ -5,6 +5,7 @@ var dashing = false
 
 @export var dash_duration = 0.2
 @onready var DashDuration_Timer = $DashDuration
+@onready var dash_sound = $"../../dash_sound"
 
 func update(delta):
 	if not dashing:
@@ -15,6 +16,7 @@ func enter_state():
 	Player.can_dash = false
 	dashing = true
 	DashDuration_Timer.start(dash_duration)
+	dash_sound.play()
 	if Player.movement_input != Vector2.ZERO:
 		dash_direction = Player.movement_input
 		

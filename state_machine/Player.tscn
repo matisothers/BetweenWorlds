@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://deyxggi7limtc"]
+[gd_scene load_steps=60 format=3 uid="uid://deyxggi7limtc"]
 
 [ext_resource type="Script" path="res://state_machine/Player.gd" id="1_whayj"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_lfv1s"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://bal7h0bh2kovo" path="res://state_machine/MOVE.tscn" id="9_w7dpi"]
 [ext_resource type="PackedScene" uid="uid://d1wnmfknnxy68" path="res://state_machine/SLIDE.tscn" id="10_42cw0"]
 [ext_resource type="Script" path="res://state_machine/SLIDE.gd" id="10_ct7f2"]
+[ext_resource type="AudioStream" uid="uid://fe5qlp5bugmp" path="res://resources/soundeff/Jump 1.wav" id="17_ibj0e"]
+[ext_resource type="AudioStream" uid="uid://bheniekbfot2c" path="res://resources/soundeff/Text 1.wav" id="19_wqnv5"]
+[ext_resource type="AudioStream" uid="uid://d0ppheds150id" path="res://resources/soundeff/Bubble heavy 2.wav" id="20_lxwvj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ddl2"]
 height = 34.0
@@ -388,5 +391,19 @@ debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
 [node name="PreJumpWindowTimer" type="Timer" parent="Timers"]
 wait_time = 0.2
+
+[node name="jump_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ibj0e")
+volume_db = -17.412
+bus = &"sound_eff"
+
+[node name="dash_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_wqnv5")
+volume_db = -5.765
+bus = &"sound_eff"
+
+[node name="death_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_lxwvj")
+bus = &"sound_eff"
 
 [connection signal="timeout" from="Timers/PreJumpWindowTimer" to="." method="_on_pre_jump_window_timer_timeout"]

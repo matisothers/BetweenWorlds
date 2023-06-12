@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://hwwnr18dh18"]
+[gd_resource type="AudioBusLayout" load_steps=7 format=3 uid="uid://hwwnr18dh18"]
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_asfpb"]
 resource_name = "LowPassFilter"
@@ -11,6 +11,12 @@ resource_name = "EQ"
 
 [sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_w4730"]
 resource_name = "Distortion"
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_1m38e"]
+resource_name = "LowPassFilter"
+
+[sub_resource type="AudioEffectPhaser" id="AudioEffectPhaser_u5lp0"]
+resource_name = "Phaser"
 
 [resource]
 bus/1/name = &"Music"
@@ -27,3 +33,13 @@ bus/1/effect/2/effect = SubResource("AudioEffectEQ_5ckfe")
 bus/1/effect/2/enabled = true
 bus/1/effect/3/effect = SubResource("AudioEffectDistortion_w4730")
 bus/1/effect/3/enabled = true
+bus/2/name = &"sound_eff"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Music"
+bus/2/effect/0/effect = SubResource("AudioEffectLowPassFilter_1m38e")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectPhaser_u5lp0")
+bus/2/effect/1/enabled = true

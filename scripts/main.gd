@@ -14,6 +14,10 @@ var can_change = true
 @onready var parallax_background = $fondo2/ParallaxBackground
 @onready var parallax_background_2 = $fondo2/ParallaxBackground2
 
+
+@onready var cant_change_world_sound = $cant_change_world_sound
+@onready var change_world_sound = $change_world_sound
+
 @onready var maps = [$TileMap_Nature,$TileMap_Futuristic]
 var world = 0
 
@@ -39,10 +43,12 @@ func _ready():
 func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("change") and can_change:
+		
 		can_change = false
 		world =  (world + 1) % 2
 		maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
 		if player.get_node("AntiClipingZone").has_overlapping_bodies():
+			cant_change_world_sound.play()
 			world =  (world + 1) % 2
 			maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
 			if dialogue_clip==true:
@@ -51,6 +57,7 @@ func _physics_process(delta):
 				add_child(d)
 				dialogue_clip = false
 		else:
+			change_world_sound.play()
 			if 	fondo_juego.visible == false:
 				fondo_juego.visible = true
 				parallax_background.visible =false 

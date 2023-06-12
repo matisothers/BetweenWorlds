@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://5m3ddfrf8ckk"]
+[gd_scene load_steps=23 format=3 uid="uid://5m3ddfrf8ckk"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_a06g4"]
 [ext_resource type="PackedScene" uid="uid://dnoaoh7rlc07c" path="res://scenes/fondo_juego.tscn" id="2_xy1in"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="12_u4yn2"]
 [ext_resource type="Texture2D" uid="uid://dcgiuuuscilyr" path="res://futuristic/cyberpunk city 2 files/Environmet/props/lights/lights2.png" id="12_vt6qk"]
 [ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="13_nm4d1"]
+[ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="14_1jrfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh4yu"]
 texture = ExtResource("8_pj2rv")
@@ -3034,7 +3035,6 @@ position = Vector2(2634, 650)
 stream = ExtResource("13_nm4d1")
 volume_db = -10.0
 pitch_scale = 0.6
-autoplay = true
 mix_target = 1
 max_polyphony = 100
 bus = &"Music"
@@ -3055,3 +3055,11 @@ emission_rect_extents = Vector2(600, 1)
 gravity = Vector2(-200, 980)
 scale_amount_max = 5.0
 color = Color(0.878431, 0, 0.290196, 1)
+
+[node name="cant_change_world_sound" type="AudioStreamPlayer" parent="."]
+bus = &"sound_eff"
+
+[node name="change_world_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_1jrfm")
+volume_db = -17.641
+bus = &"sound_eff"

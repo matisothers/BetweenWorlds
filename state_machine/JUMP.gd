@@ -2,6 +2,7 @@ extends "state.gd"
 
 @onready var animation_tree = $"../../AnimationTree"
 @onready var playback = animation_tree.get("parameters/playback")
+@onready var jump_sound = $"../../jump_sound"
 
 func update(delta):
 	Player.gravity(delta)
@@ -20,6 +21,7 @@ func update(delta):
 
 func enter_state():
 	playback.travel("jump")
+	jump_sound.play()
 	Player.velocity.y = Player.JUMP_VELOCITY
 	
 	
