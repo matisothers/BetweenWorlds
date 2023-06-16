@@ -12,9 +12,8 @@ position = Vector2(-16, 0)
 scale = Vector2(1.96663, 2.48344)
 
 [node name="Undersea" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(652, 386)
-scale = Vector2(0.652, 0.764)
+position = Vector2(401.448, 145.35)
+scale = Vector2(0.401448, 0.282699)
 texture = ExtResource("1_aq0ro")
 
 [node name="2" type="Sprite2D" parent="."]
@@ -45,6 +44,7 @@ scale = Vector2(2.4, 3.12222)
 texture = ExtResource("5_ugqt2")
 
 [node name="Demo" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.686275, 0.478431, 1, 1)
 position = Vector2(406.788, 144.96)
 scale = Vector2(1.65006, 1.62751)
