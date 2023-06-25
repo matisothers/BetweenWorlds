@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=60 format=3 uid="uid://deyxggi7limtc"]
-=======
 [gd_scene load_steps=67 format=3 uid="uid://deyxggi7limtc"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://state_machine/Player.gd" id="1_whayj"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_lfv1s"]
