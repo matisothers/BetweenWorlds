@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 [gd_scene load_steps=60 format=3 uid="uid://deyxggi7limtc"]
-=======
-[gd_scene load_steps=67 format=3 uid="uid://deyxggi7limtc"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://state_machine/Player.gd" id="1_whayj"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_lfv1s"]
@@ -26,9 +22,6 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ddl2"]
 height = 34.0
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yqn3n"]
-animation = &"Dash"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wpwd6"]
 animation = &"fall"
@@ -87,25 +80,7 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1rh45"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kbyd4"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bur8f"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yy7q8"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wyvjb"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8d4vt"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_upwer"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sjb2r"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4eqhm"]
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_6kjab"]
-states/Dash/node = SubResource("AnimationNodeAnimation_yqn3n")
-states/Dash/position = Vector2(509.535, 351.772)
 states/End/position = Vector2(910, 180)
 states/Start/position = Vector2(208, 100.5)
 states/fall/node = SubResource("AnimationNodeAnimation_wpwd6")
@@ -122,7 +97,7 @@ states/run/node = SubResource("AnimationNodeAnimation_xjhih")
 states/run/position = Vector2(740, 197.5)
 "states/start jump/node" = SubResource("AnimationNodeAnimation_oo7td")
 "states/start jump/position" = Vector2(359, 49)
-transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7je75"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_is5i7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_gnd5c"), "idle", "start jump", SubResource("AnimationNodeStateMachineTransition_p4gq4"), "run", "start jump", SubResource("AnimationNodeStateMachineTransition_g1r68"), "start jump", "jump", SubResource("AnimationNodeStateMachineTransition_c7l2m"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_r8lag"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_2yymh"), "grab", "fall", SubResource("AnimationNodeStateMachineTransition_20xsw"), "grab", "start jump", SubResource("AnimationNodeStateMachineTransition_i5w2r"), "grab", "idle", SubResource("AnimationNodeStateMachineTransition_ap38o"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_sxhvu"), "idle", "mid air", SubResource("AnimationNodeStateMachineTransition_mfqby"), "jump", "mid air", SubResource("AnimationNodeStateMachineTransition_bfao4"), "mid air", "fall", SubResource("AnimationNodeStateMachineTransition_k353w"), "jump", "grab", SubResource("AnimationNodeStateMachineTransition_dqepk"), "start jump", "grab", SubResource("AnimationNodeStateMachineTransition_1rh45"), "idle", "Dash", SubResource("AnimationNodeStateMachineTransition_kbyd4"), "Dash", "idle", SubResource("AnimationNodeStateMachineTransition_bur8f"), "run", "Dash", SubResource("AnimationNodeStateMachineTransition_yy7q8"), "Dash", "run", SubResource("AnimationNodeStateMachineTransition_wyvjb"), "jump", "Dash", SubResource("AnimationNodeStateMachineTransition_8d4vt"), "mid air", "Dash", SubResource("AnimationNodeStateMachineTransition_upwer"), "fall", "Dash", SubResource("AnimationNodeStateMachineTransition_sjb2r"), "Dash", "fall", SubResource("AnimationNodeStateMachineTransition_4eqhm")]
+transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7je75"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_is5i7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_gnd5c"), "idle", "start jump", SubResource("AnimationNodeStateMachineTransition_p4gq4"), "run", "start jump", SubResource("AnimationNodeStateMachineTransition_g1r68"), "start jump", "jump", SubResource("AnimationNodeStateMachineTransition_c7l2m"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_r8lag"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_2yymh"), "grab", "fall", SubResource("AnimationNodeStateMachineTransition_20xsw"), "grab", "start jump", SubResource("AnimationNodeStateMachineTransition_i5w2r"), "grab", "idle", SubResource("AnimationNodeStateMachineTransition_ap38o"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_sxhvu"), "idle", "mid air", SubResource("AnimationNodeStateMachineTransition_mfqby"), "jump", "mid air", SubResource("AnimationNodeStateMachineTransition_bfao4"), "mid air", "fall", SubResource("AnimationNodeStateMachineTransition_k353w"), "jump", "grab", SubResource("AnimationNodeStateMachineTransition_dqepk"), "start jump", "grab", SubResource("AnimationNodeStateMachineTransition_1rh45")]
 graph_offset = Vector2(197.535, -113.228)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_pjkou"]
@@ -287,24 +262,8 @@ tracks/0/keys = {
 "values": [11]
 }
 
-[sub_resource type="Animation" id="Animation_r0cvo"]
-resource_name = "Dash"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [31]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o477v"]
 _data = {
-"Dash": SubResource("Animation_r0cvo"),
 "RESET": SubResource("Animation_4i3uv"),
 "end grab": SubResource("Animation_hbhc8"),
 "end jump": SubResource("Animation_1nqui"),
