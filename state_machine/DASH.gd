@@ -7,12 +7,16 @@ var dashing = false
 @onready var DashDuration_Timer = $DashDuration
 @onready var dash_sound = $"../../dash_sound"
 
+@onready var animation_tree = $"../../AnimationTree"
+@onready var playback = animation_tree.get("parameters/playback")
+
 func update(delta):
 	if not dashing:
 		return STATES.FALL
 	return null
 	
 func enter_state():
+	playback.travel("Dash")
 	Player.can_dash = false
 	dashing = true
 	DashDuration_Timer.start(dash_duration)
