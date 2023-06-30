@@ -16,6 +16,9 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [node name="dialogos" type="Node2D"]
+light_mask = 64
+visibility_layer = 64
+z_index = 3
 script = ExtResource("1_xl027")
 
 [node name="Label" type="Label" parent="."]
