@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://deyxggi7limtc"]
+[gd_scene load_steps=70 format=3 uid="uid://deyxggi7limtc"]
 
 [ext_resource type="Script" path="res://state_machine/Player.gd" id="1_whayj"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_lfv1s"]
@@ -122,6 +122,21 @@ transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7
 graph_offset = Vector2(197.535, -113.228)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_pjkou"]
+
+[sub_resource type="Animation" id="Animation_r0cvo"]
+resource_name = "Dash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [31]
+}
 
 [sub_resource type="Animation" id="Animation_4i3uv"]
 length = 0.001
@@ -281,21 +296,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [11]
-}
-
-[sub_resource type="Animation" id="Animation_r0cvo"]
-resource_name = "Dash"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Pivot/Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [31]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_o477v"]
