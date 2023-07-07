@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="12_u4yn2"]
 [ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="13_nm4d1"]
 [ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="14_1jrfm"]
-[ext_resource type="PackedScene" uid="uid://vdoqkplcmca" path="res://to_next_level.tscn" id="15_3hwcp"]
 [ext_resource type="AudioStream" uid="uid://d0ppheds150id" path="res://resources/soundeff/Bubble heavy 2.wav" id="14_xr6je"]
+[ext_resource type="PackedScene" uid="uid://vdoqkplcmca" path="res://to_next_level.tscn" id="15_3hwcp"]
 [ext_resource type="PackedScene" uid="uid://cffi74ndxnh4i" path="res://scenes/checkpoint.tscn" id="15_kq285"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh4yu"]
@@ -2891,6 +2891,7 @@ script = ExtResource("1_a06g4")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 
 [node name="fondo_juego" parent="." instance=ExtResource("2_xy1in")]
+position = Vector2(37, 72)
 
 [node name="fondo2" type="Node" parent="."]
 
@@ -3082,6 +3083,6 @@ position = Vector2(1066, 329)
 position = Vector2(2128, 202)
 
 [node name="to_next_level" parent="." instance=ExtResource("15_3hwcp")]
-position = Vector2(516, 354)
+position = Vector2(2563, 222)
 
 [editable path="checkPoints/Checkpoint"]
