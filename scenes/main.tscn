@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://5m3ddfrf8ckk"]
+[gd_scene load_steps=25 format=3 uid="uid://5m3ddfrf8ckk"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_a06g4"]
 [ext_resource type="PackedScene" uid="uid://dnoaoh7rlc07c" path="res://scenes/fondo_juego.tscn" id="2_xy1in"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="13_nm4d1"]
 [ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="14_1jrfm"]
 [ext_resource type="PackedScene" uid="uid://vdoqkplcmca" path="res://to_next_level.tscn" id="15_3hwcp"]
+[ext_resource type="AudioStream" uid="uid://d0ppheds150id" path="res://resources/soundeff/Bubble heavy 2.wav" id="14_xr6je"]
 [ext_resource type="PackedScene" uid="uid://cffi74ndxnh4i" path="res://scenes/checkpoint.tscn" id="15_kq285"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh4yu"]
@@ -3055,6 +3056,7 @@ scale_amount_max = 5.0
 color = Color(0.878431, 0, 0.290196, 1)
 
 [node name="cant_change_world_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_xr6je")
 bus = &"sound_eff"
 
 [node name="change_world_sound" type="AudioStreamPlayer" parent="."]
@@ -3071,8 +3073,13 @@ position = Vector2(470, 329)
 position = Vector2(-1, 23)
 
 [node name="Checkpoint2" parent="checkPoints" instance=ExtResource("15_kq285")]
+position = Vector2(231, 440)
 
 [node name="Checkpoint3" parent="checkPoints" instance=ExtResource("15_kq285")]
+position = Vector2(1066, 329)
+
+[node name="Checkpoint4" parent="checkPoints" instance=ExtResource("15_kq285")]
+position = Vector2(2128, 202)
 
 [node name="to_next_level" parent="." instance=ExtResource("15_3hwcp")]
 position = Vector2(516, 354)
