@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5m3ddfrf8ckk"]
+[gd_scene load_steps=24 format=3 uid="uid://5m3ddfrf8ckk"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_a06g4"]
 [ext_resource type="PackedScene" uid="uid://dnoaoh7rlc07c" path="res://scenes/fondo_juego.tscn" id="2_xy1in"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dcgiuuuscilyr" path="res://futuristic/cyberpunk city 2 files/Environmet/props/lights/lights2.png" id="12_vt6qk"]
 [ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="13_nm4d1"]
 [ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="14_1jrfm"]
+[ext_resource type="PackedScene" uid="uid://cffi74ndxnh4i" path="res://scenes/checkpoint.tscn" id="15_kq285"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh4yu"]
 texture = ExtResource("8_pj2rv")
@@ -3064,3 +3065,17 @@ bus = &"sound_eff"
 stream = ExtResource("14_1jrfm")
 volume_db = -17.641
 bus = &"sound_eff"
+
+[node name="checkPoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="checkPoints" instance=ExtResource("15_kq285")]
+position = Vector2(470, 329)
+
+[node name="SpawnPosition" parent="checkPoints/Checkpoint" index="1"]
+position = Vector2(-1, 23)
+
+[node name="Checkpoint2" parent="checkPoints" instance=ExtResource("15_kq285")]
+
+[node name="Checkpoint3" parent="checkPoints" instance=ExtResource("15_kq285")]
+
+[editable path="checkPoints/Checkpoint"]

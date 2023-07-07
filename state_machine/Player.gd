@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Player
 
 
 
@@ -34,6 +34,7 @@ var previous_state = null
 var can_dash = true
 #dialogues
 var dialogue = preload("res://dialogos.tscn")
+var spawn = Vector2.ZERO
 #jugador 
 @onready var player = $"."
 
@@ -183,8 +184,12 @@ func jump_logic():
 		pre_jump_window_timer.start()
 
 	
+func respawn():
+	self.position = spawn
 	
 
 
 func _on_pre_jump_window_timer_timeout():
 	activate_jump = false
+
+

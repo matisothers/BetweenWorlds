@@ -76,4 +76,4 @@ func _physics_process(delta):
 		maps[(world + 1) % 2].tile_set.set("physics_layer_0/collision_layer", 16)
 		
 	if player.global_position.y > botom+75:
-		get_tree().reload_current_scene() 
+		player.respawn()
