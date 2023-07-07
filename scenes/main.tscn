@@ -11,9 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cc86hhdfqyn03" path="res://Background_resources/fondo_juego/Alien tileset/Alien tileset/Alien tileset.png" id="8_pj2rv"]
 [ext_resource type="Texture2D" uid="uid://11m50vu2slo3" path="res://resources/stringstar fields/tileset.png" id="9_052qj"]
 [ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="12_u4yn2"]
-[ext_resource type="Texture2D" uid="uid://dcgiuuuscilyr" path="res://futuristic/cyberpunk city 2 files/Environmet/props/lights/lights2.png" id="12_vt6qk"]
 [ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="13_nm4d1"]
 [ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="14_1jrfm"]
+[ext_resource type="PackedScene" uid="uid://vdoqkplcmca" path="res://to_next_level.tscn" id="15_3hwcp"]
 [ext_resource type="PackedScene" uid="uid://cffi74ndxnh4i" path="res://scenes/checkpoint.tscn" id="15_kq285"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh4yu"]
@@ -3041,10 +3041,6 @@ mix_target = 1
 max_polyphony = 100
 bus = &"Music"
 
-[node name="Lights2" type="Sprite2D" parent="."]
-position = Vector2(2520, 223)
-texture = ExtResource("12_vt6qk")
-
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 modulate = Color(0.247059, 0.403922, 0.701961, 1)
 self_modulate = Color(0.701961, 0.32549, 0.498039, 1)
@@ -3077,5 +3073,8 @@ position = Vector2(-1, 23)
 [node name="Checkpoint2" parent="checkPoints" instance=ExtResource("15_kq285")]
 
 [node name="Checkpoint3" parent="checkPoints" instance=ExtResource("15_kq285")]
+
+[node name="to_next_level" parent="." instance=ExtResource("15_3hwcp")]
+position = Vector2(516, 354)
 
 [editable path="checkPoints/Checkpoint"]

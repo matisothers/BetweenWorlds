@@ -3,7 +3,7 @@ extends MarginContainer
 
 @onready var rmainmenu = %rmainmenu
 @onready var label_2 = %Label2
-@onready var retry = %Retry
+
 
 
 
@@ -17,28 +17,14 @@ func _ready():
 	#get_node("PanelContainer/MarginContainer/VBoxContainer/Label2").text = str("bachata")
 	
 	resume.pressed.connect(_on_resume_pressed)
-	retry.pressed.connect(_on_retry_pressed)
+	
 	rmainmenu.pressed.connect(_on_rmainmenu_pressed)
-	hide()
-func _input(event):
-	if event.is_action_pressed("pause"):
-		show()
-		get_tree().paused = true
+
 		
 func _on_resume_pressed():
 	get_tree().paused = false
-	hide()
-func _on_retry_pressed():
-	
-	get_tree().reload_current_scene()
-	get_tree().paused = false
-	
+	hide()	
 	
 func _on_rmainmenu_pressed():
 	get_tree().change_scene_to_file("res://ui/mainmenu.tscn")
 	get_tree().paused = false
-	
-	
-
-
-

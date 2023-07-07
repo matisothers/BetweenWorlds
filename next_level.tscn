@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://82salw3yoss8"]
 
-[ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_0rqgs"]
+[ext_resource type="Script" path="res://next_level.gd" id="1_l3fix"]
 [ext_resource type="FontFile" uid="uid://mymj0wih086" path="res://resources/fonts/1/Beholden-Bold.ttf" id="2_5gfg0"]
 [ext_resource type="Texture2D" uid="uid://wetjf58ccjvo" path="res://pexels-eberhard-grossgasteiger-2088170.jpg" id="3_2j4md"]
 
@@ -128,7 +128,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_0rqgs")
+script = ExtResource("1_l3fix")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -202,6 +202,6 @@ libraries = {
 
 [node name="Sprite2D" type="Sprite2D" parent="PanelContainer/MarginContainer"]
 show_behind_parent = true
-position = Vector2(242, 132.5)
-scale = Vector2(0.497656, 0.177083)
+position = Vector2(238, 123.5)
+scale = Vector2(0.938281, 0.366146)
 texture = ExtResource("3_2j4md")
