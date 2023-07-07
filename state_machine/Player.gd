@@ -74,20 +74,23 @@ func _physics_process(delta):
 		current_dialogue+=1
 
 	if (player.position.x >=520 and current_dialogue == 2):
-		remove_child(d)
+		if d != null:
+			remove_child(d)
 		d= dialogue.instantiate()
 		d.messages = [ "That looks kinda far","you can change the world you are", "just press X", "this platform is special", "it is in
 		both worlds"]
 		add_child(d)
 		current_dialogue+=1
 	if (player.position.x >=750 and current_dialogue == 3):
-		remove_child(d)
+		if d != null:
+			remove_child(d)
 		d= dialogue.instantiate()
 		d.messages = [ "JUMPP AND SWITCH WORLDSSSS"]
 		add_child(d)
 		current_dialogue+=1
 	if (player.position.x >=1100 and current_dialogue == 4):
-		remove_child(d)
+		if d != null:
+			remove_child(d)
 		d= dialogue.instantiate()
 		d.messages = [ "Try to complete the level", "the blood moon is rising once again"]
 		add_child(d)
