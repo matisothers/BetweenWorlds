@@ -1,21 +1,15 @@
-[gd_scene load_steps=70 format=3 uid="uid://deyxggi7limtc"]
+[gd_scene load_steps=63 format=3 uid="uid://deyxggi7limtc"]
 
 [ext_resource type="Script" path="res://state_machine/Player.gd" id="1_whayj"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_lfv1s"]
 [ext_resource type="PackedScene" uid="uid://bwfjua4i04mge" path="res://ui/pause_menu.tscn" id="3_8wdpl"]
 [ext_resource type="Script" path="res://state_machine/STATES.gd" id="4_dwgsv"]
 [ext_resource type="PackedScene" uid="uid://di2dk10qydcn8" path="res://state_machine/DASH.tscn" id="5_o1vn1"]
-[ext_resource type="Script" path="res://state_machine/DASH.gd" id="5_xn7ri"]
-[ext_resource type="Script" path="res://state_machine/FALL.gd" id="6_t0yem"]
 [ext_resource type="PackedScene" uid="uid://cl0qjn17mliw0" path="res://state_machine/FALL.tscn" id="6_tep2g"]
-[ext_resource type="Script" path="res://state_machine/IDLE.gd" id="7_nov78"]
 [ext_resource type="PackedScene" uid="uid://cemys5cq2oht3" path="res://state_machine/IDLE.tscn" id="7_y6wg1"]
 [ext_resource type="PackedScene" uid="uid://40bc8brh6tgg" path="res://state_machine/JUMP.tscn" id="8_qapcv"]
-[ext_resource type="Script" path="res://state_machine/JUMP.gd" id="8_yvxtj"]
-[ext_resource type="Script" path="res://state_machine/MOVE.gd" id="9_65sfo"]
 [ext_resource type="PackedScene" uid="uid://bal7h0bh2kovo" path="res://state_machine/MOVE.tscn" id="9_w7dpi"]
 [ext_resource type="PackedScene" uid="uid://d1wnmfknnxy68" path="res://state_machine/SLIDE.tscn" id="10_42cw0"]
-[ext_resource type="Script" path="res://state_machine/SLIDE.gd" id="10_ct7f2"]
 [ext_resource type="AudioStream" uid="uid://fe5qlp5bugmp" path="res://resources/soundeff/Jump 1.wav" id="17_ibj0e"]
 [ext_resource type="AudioStream" uid="uid://bheniekbfot2c" path="res://resources/soundeff/Text 1.wav" id="19_wqnv5"]
 [ext_resource type="AudioStream" uid="uid://d0ppheds150id" path="res://resources/soundeff/Bubble heavy 2.wav" id="20_lxwvj"]
@@ -120,8 +114,6 @@ states/run/position = Vector2(740, 197.5)
 "states/start jump/position" = Vector2(359, 49)
 transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7je75"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_is5i7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_gnd5c"), "idle", "start jump", SubResource("AnimationNodeStateMachineTransition_p4gq4"), "run", "start jump", SubResource("AnimationNodeStateMachineTransition_g1r68"), "start jump", "jump", SubResource("AnimationNodeStateMachineTransition_c7l2m"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_r8lag"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_2yymh"), "grab", "fall", SubResource("AnimationNodeStateMachineTransition_20xsw"), "grab", "start jump", SubResource("AnimationNodeStateMachineTransition_i5w2r"), "grab", "idle", SubResource("AnimationNodeStateMachineTransition_ap38o"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_sxhvu"), "idle", "mid air", SubResource("AnimationNodeStateMachineTransition_mfqby"), "jump", "mid air", SubResource("AnimationNodeStateMachineTransition_bfao4"), "mid air", "fall", SubResource("AnimationNodeStateMachineTransition_k353w"), "jump", "grab", SubResource("AnimationNodeStateMachineTransition_dqepk"), "start jump", "grab", SubResource("AnimationNodeStateMachineTransition_1rh45"), "idle", "Dash", SubResource("AnimationNodeStateMachineTransition_kbyd4"), "Dash", "idle", SubResource("AnimationNodeStateMachineTransition_bur8f"), "run", "Dash", SubResource("AnimationNodeStateMachineTransition_yy7q8"), "Dash", "run", SubResource("AnimationNodeStateMachineTransition_wyvjb"), "jump", "Dash", SubResource("AnimationNodeStateMachineTransition_8d4vt"), "mid air", "Dash", SubResource("AnimationNodeStateMachineTransition_upwer"), "fall", "Dash", SubResource("AnimationNodeStateMachineTransition_sjb2r"), "Dash", "fall", SubResource("AnimationNodeStateMachineTransition_4eqhm")]
 graph_offset = Vector2(197.535, -113.228)
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_pjkou"]
 
 [sub_resource type="Animation" id="Animation_r0cvo"]
 resource_name = "Dash"
@@ -337,7 +329,6 @@ shape = SubResource("CapsuleShape2D_2ddl2")
 tree_root = SubResource("AnimationNodeStateMachine_6kjab")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource("AnimationNodeStateMachinePlayback_pjkou")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -386,28 +377,19 @@ target_position = Vector2(9, 0)
 script = ExtResource("4_dwgsv")
 
 [node name="DASH" parent="STATES" instance=ExtResource("5_o1vn1")]
-script = ExtResource("5_xn7ri")
-dash_duration = 0.2
 
 [node name="FALL" parent="STATES" instance=ExtResource("6_tep2g")]
-script = ExtResource("6_t0yem")
-coyote_duration = 0.2
 
 [node name="IDLE" parent="STATES" instance=ExtResource("7_y6wg1")]
-script = ExtResource("7_nov78")
 
 [node name="JUMP" parent="STATES" instance=ExtResource("8_qapcv")]
-script = ExtResource("8_yvxtj")
 
 [node name="MOVE" parent="STATES" instance=ExtResource("9_w7dpi")]
-script = ExtResource("9_65sfo")
 
 [node name="SLIDE" parent="STATES" instance=ExtResource("10_42cw0")]
-script = ExtResource("10_ct7f2")
-climb_speed = 80
-slide_friction = 0
 
 [node name="LABEL" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -56.0
 offset_right = 27.0

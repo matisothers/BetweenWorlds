@@ -2888,8 +2888,6 @@ sources/0 = SubResource("TileSetAtlasSource_jrejr")
 [node name="Main" type="Node2D"]
 script = ExtResource("1_a06g4")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-
 [node name="fondo_juego" parent="." instance=ExtResource("2_xy1in")]
 position = Vector2(37, 72)
 
