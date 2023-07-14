@@ -10,7 +10,7 @@ func update(delta):
 	slide_movement(delta)
 	if Player.get_next_to_wall() == null:
 		return STATES.FALL
-	if Player.activate_jump:
+	if Player.activate_jump and !Player.block_climb:
 		return STATES.JUMP
 	if Player.is_on_floor():
 		return STATES.IDLE

@@ -35,6 +35,12 @@ var can_dash = true
 #dialogues
 var dialogue = preload("res://dialogos.tscn")
 var spawn = Vector2.ZERO
+
+# block dash and climb
+var block_dash = false
+var block_climb = false
+
+
 #jugador 
 @onready var player = $"."
 
@@ -58,6 +64,7 @@ func _ready():
 	previous_state = STATES.IDLE
 	set_velocity_values()
 func _physics_process(delta):
+	
 	player_input()
 	change_state(current_state.update(delta))
 	#default_move(delta)
@@ -100,7 +107,7 @@ func _physics_process(delta):
 
 	
 func gravity(delta):
-	if not is_on_floor():
+	if not is_on_floor() and velocity.y < 500:
 		if current_state==STATES.SLIDE and velocity.y>0:
 			velocity.y += gravity_value * delta *0.1
 		else:
@@ -149,13 +156,13 @@ func player_input():
 		jump_input_actuation = false
 		
 	#Trepar
-	if Input.is_action_pressed("Climb"):
+	if Input.is_action_pressed("Climb") and !block_climb:
 		climb_input = true
 	else:
 		climb_input = false
 		
 	#Dash
-	if Input.is_action_just_pressed("Dash"):
+	if Input.is_action_just_pressed("Dash") and !block_dash:
 		dash_input = true
 	else:
 		dash_input = false
@@ -185,7 +192,10 @@ func jump_logic():
 
 	
 func respawn():
-	self.position = spawn
+	if spawn == Vector2.ZERO:
+		get_tree().reload_current_scene()
+	else:
+		self.position = spawn
 	
 
 

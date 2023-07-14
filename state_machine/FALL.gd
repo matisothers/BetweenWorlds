@@ -6,11 +6,14 @@ extends "state.gd"
 @export var coyote_duration = 0.2
 var can_jump = true
 
+
 func update(delta):
 	Player.gravity(delta)
 	player_movement()
+
 	if Player.is_on_floor():
 		playback.travel("idle")
+		
 		return STATES.IDLE
 		
 	if Player.dash_input and Player.can_dash:

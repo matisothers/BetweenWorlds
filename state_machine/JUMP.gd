@@ -6,6 +6,7 @@ extends "state.gd"
 
 func update(delta):
 	Player.gravity(delta)
+	
 	jump_movement()
 	player_movement()
 

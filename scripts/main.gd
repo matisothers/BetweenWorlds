@@ -25,7 +25,8 @@ var dialogue = preload("res://dialogos.tscn")
 var dialogue_clip = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	player.block_dash = true
+	player.block_climb = true
 	player.set_camera_limits(
 		margins.get_node("sup_izq").global_position,
 		margins.get_node("inf_der").global_position
@@ -41,7 +42,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	
+
 	if Input.is_action_just_pressed("change") and can_change:
 		
 		can_change = false

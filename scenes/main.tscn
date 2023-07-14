@@ -3020,9 +3020,6 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(1769509, 983040, 9, 1769510, 1048576, 9, 1769511, 1114112, 9, 1900581, 983040, 9, 1900582, 1048576, 9, 1900583, 1114112, 9, 1900590, 983040, 9, 1900591, 1048576, 9, 1900592, 1114112, 9, 1769524, 1572864, 10, 1835060, 1572864, 11, 1703977, 983040, 11, 1703978, 1048576, 11, 1703979, 1114112, 11, 1703980, 1179648, 11, 983140, 983040, 11, 983141, 1048576, 11, 983142, 1114112, 11, 983143, 1114112, 11, 589941, 983040, 11, 589942, 1048576, 11, 589943, 1114112, 11, 589944, 1179648, 11, 721018, 1572864, 10, 786554, 1572864, 11, 655475, 1114112, 11, 655476, 1179648, 11, 786545, 1114112, 11, 786546, 1179648, 11, 983144, 1179648, 11, 1376358, 983040, 9, 1376359, 1048576, 9, 1376360, 1114112, 9, 917619, 983040, 9, 917620, 1048576, 9, 917621, 1114112, 9, 1638490, 983040, 9, 1638491, 1048576, 9, 1638492, 1114112, 9)
 
-[node name="Player" parent="." instance=ExtResource("12_u4yn2")]
-position = Vector2(231, 471)
-
 [node name="margins" type="Node" parent="."]
 
 [node name="sup_izq" type="Marker2D" parent="margins"]
@@ -3071,9 +3068,6 @@ position = Vector2(470, 329)
 [node name="SpawnPosition" parent="checkPoints/Checkpoint" index="1"]
 position = Vector2(-1, 23)
 
-[node name="Checkpoint2" parent="checkPoints" instance=ExtResource("15_kq285")]
-position = Vector2(231, 440)
-
 [node name="Checkpoint3" parent="checkPoints" instance=ExtResource("15_kq285")]
 position = Vector2(1066, 329)
 
@@ -3082,5 +3076,8 @@ position = Vector2(2128, 202)
 
 [node name="to_next_level" parent="." instance=ExtResource("15_3hwcp")]
 position = Vector2(2563, 222)
+
+[node name="Player" parent="." instance=ExtResource("12_u4yn2")]
+position = Vector2(231, 471)
 
 [editable path="checkPoints/Checkpoint"]
