@@ -113,7 +113,7 @@ _data = {
 "fade_in": SubResource("Animation_obtun")
 }
 
-[node name="Pause Menu" type="MarginContainer"]
+[node name="Pause Menu2" type="MarginContainer"]
 process_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
