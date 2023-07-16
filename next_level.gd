@@ -22,8 +22,9 @@ func _ready():
 
 		
 func _on_resume_pressed():
-	get_tree().change_scene_to_file("res://ui/mainmenu.tscn")
+	#get_tree().change_scene_to_file("res://ui/mainmenu.tscn")
 	get_tree().paused = false
+	LevelManager.next_level()
 	
 func _on_rmainmenu_pressed():
 	get_tree().change_scene_to_file("res://ui/mainmenu.tscn")
