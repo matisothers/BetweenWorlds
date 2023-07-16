@@ -21,8 +21,10 @@ var can_change = true
 @onready var maps = [$TileMap_Nature,$TileMap_Futuristic]
 var world = 0
 
+var current_dialogue = 1
 var dialogue = preload("res://dialogos.tscn")
 var dialogue_clip = true
+var messages 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -41,6 +43,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
+	# dialogos
+	if (player.position.x >=200 and current_dialogue == 1):
+		messages = ["Hey you're doinig it right", "Now try climbing walls", "Press C next to a wall in the air", "Or just jump again"]
+		player.say(messages)
+		current_dialogue+=1
+	
 	
 	if Input.is_action_just_pressed("change") and can_change:
 		
