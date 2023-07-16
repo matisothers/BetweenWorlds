@@ -21,6 +21,7 @@ var dialogue = preload("res://dialogos.tscn")
 var dialogue_clip = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	player.block_climb= true
 
 	player.set_camera_limits(
 		margins.get_node("sup_izq").global_position,
