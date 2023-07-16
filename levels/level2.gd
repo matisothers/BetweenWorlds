@@ -9,10 +9,10 @@ var can_change = true
 @onready var top = margins.get_node("sup_izq").global_position.y
 @onready var left = margins.get_node("sup_izq").global_position.x
 @onready var right = margins.get_node("inf_der").global_position.x
+@onready var fondo_juego = $fondo_lv2_nature
+@onready var parallax_background = $fondo_lv2_futuristic
 
-@onready var fondo_juego = $fondo_juego
-@onready var parallax_background = $fondo2/ParallaxBackground
-@onready var parallax_background_2 = $fondo2/ParallaxBackground2
+
 
 @onready var maps = [$TileMap_Nature,$TileMap_Futuristic]
 var world = 0
@@ -48,11 +48,11 @@ func _physics_process(delta):
 			if 	fondo_juego.visible == false:
 				fondo_juego.visible = true
 				parallax_background.visible =false 
-				parallax_background_2.visible = false
+				
 			else:
 				fondo_juego.visible = false
 				parallax_background.visible =true 
-				parallax_background_2.visible = true
+				
 			dialogue_clip= true
 
 	maps[1].modulate.a = move_toward(maps[1].modulate.a,world,0.03)

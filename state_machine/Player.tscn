@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://deyxggi7limtc"]
+[gd_scene load_steps=64 format=3 uid="uid://deyxggi7limtc"]
 
 [ext_resource type="Script" path="res://state_machine/Player.gd" id="1_whayj"]
 [ext_resource type="Texture2D" uid="uid://bdsms00k0x0ks" path="res://skeleton-walk (1).png" id="2_lfv1s"]
@@ -114,6 +114,8 @@ states/run/position = Vector2(740, 197.5)
 "states/start jump/position" = Vector2(359, 49)
 transitions = ["run", "idle", SubResource("AnimationNodeStateMachineTransition_7je75"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_is5i7"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_gnd5c"), "idle", "start jump", SubResource("AnimationNodeStateMachineTransition_p4gq4"), "run", "start jump", SubResource("AnimationNodeStateMachineTransition_g1r68"), "start jump", "jump", SubResource("AnimationNodeStateMachineTransition_c7l2m"), "fall", "run", SubResource("AnimationNodeStateMachineTransition_r8lag"), "run", "fall", SubResource("AnimationNodeStateMachineTransition_2yymh"), "grab", "fall", SubResource("AnimationNodeStateMachineTransition_20xsw"), "grab", "start jump", SubResource("AnimationNodeStateMachineTransition_i5w2r"), "grab", "idle", SubResource("AnimationNodeStateMachineTransition_ap38o"), "fall", "idle", SubResource("AnimationNodeStateMachineTransition_sxhvu"), "idle", "mid air", SubResource("AnimationNodeStateMachineTransition_mfqby"), "jump", "mid air", SubResource("AnimationNodeStateMachineTransition_bfao4"), "mid air", "fall", SubResource("AnimationNodeStateMachineTransition_k353w"), "jump", "grab", SubResource("AnimationNodeStateMachineTransition_dqepk"), "start jump", "grab", SubResource("AnimationNodeStateMachineTransition_1rh45"), "idle", "Dash", SubResource("AnimationNodeStateMachineTransition_kbyd4"), "Dash", "idle", SubResource("AnimationNodeStateMachineTransition_bur8f"), "run", "Dash", SubResource("AnimationNodeStateMachineTransition_yy7q8"), "Dash", "run", SubResource("AnimationNodeStateMachineTransition_wyvjb"), "jump", "Dash", SubResource("AnimationNodeStateMachineTransition_8d4vt"), "mid air", "Dash", SubResource("AnimationNodeStateMachineTransition_upwer"), "fall", "Dash", SubResource("AnimationNodeStateMachineTransition_sjb2r"), "Dash", "fall", SubResource("AnimationNodeStateMachineTransition_4eqhm")]
 graph_offset = Vector2(197.535, -113.228)
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_tit4m"]
 
 [sub_resource type="Animation" id="Animation_r0cvo"]
 resource_name = "Dash"
@@ -329,6 +331,7 @@ shape = SubResource("CapsuleShape2D_2ddl2")
 tree_root = SubResource("AnimationNodeStateMachine_6kjab")
 anim_player = NodePath("../AnimationPlayer")
 active = true
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_tit4m")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
