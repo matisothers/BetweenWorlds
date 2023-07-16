@@ -21,8 +21,11 @@ var can_change = true
 @onready var maps = [$TileMap_Nature,$TileMap_Futuristic]
 var world = 0
 
+var current_dialogue = 1
 var dialogue = preload("res://dialogos.tscn")
 var dialogue_clip = true
+var messages
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	player.block_dash = true
@@ -37,11 +40,34 @@ func _ready():
 	maps[0].modulate.a = 1
 	maps[1].modulate.a = 0
 	
-	player.current_dialogue = 1
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
+	# dialogues
+	if (player.position.x >=250 and current_dialogue == 1):
+		messages = ["HEYY YOU", "YES YOU", "who I am?", "I'm Jesus", "nah kidding", "I'm the 44 president Barack Obama",
+		"press space to jump", "not sure what space is but press it"]
+		player.say(messages)
+		current_dialogue+=1
+		
+	if (player.position.x >=520 and current_dialogue == 2):
+		messages = [ "That looks kinda far","you can change the world you are", "just press X", "this platform is special", "it is in
+		both worlds"]
+		player.say(messages)
+		current_dialogue+=1
+	
+	if (player.position.x >=750 and current_dialogue == 3):
+		messages = [ "JUMPP AND SWITCH WORLDSSSS"]
+		player.say(messages)
+		current_dialogue+=1
+	
+	if (player.position.x >=1100 and current_dialogue == 4):
+		messages = [ "Try to complete the level", "the blood moon is rising once again"]
+		player.say(messages)
+		current_dialogue+=1
+	
 
 	if Input.is_action_just_pressed("change") and can_change:
 		

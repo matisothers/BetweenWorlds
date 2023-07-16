@@ -74,35 +74,10 @@ func _physics_process(delta):
 	$LABEL.text = str(current_state.get_name())
 	move_and_slide()
 	
-	if (player.position.x >=250 and current_dialogue == 1):
-		d = dialogue.instantiate()
-		d.messages = ["HEYY YOU", "YES YOU", "who I am?", "I'm Jesus", "nah kidding", "I'm the 44 president Barack Obama",
-		"press space to jump", "not sure what space is but press it"]
-		add_child(d)
-		current_dialogue+=1
 
-	if (player.position.x >=520 and current_dialogue == 2):
-		if d != null:
-			remove_child(d)
-		d= dialogue.instantiate()
-		d.messages = [ "That looks kinda far","you can change the world you are", "just press X", "this platform is special", "it is in
-		both worlds"]
-		add_child(d)
-		current_dialogue+=1
-	if (player.position.x >=750 and current_dialogue == 3):
-		if d != null:
-			remove_child(d)
-		d= dialogue.instantiate()
-		d.messages = [ "JUMPP AND SWITCH WORLDSSSS"]
-		add_child(d)
-		current_dialogue+=1
-	if (player.position.x >=1100 and current_dialogue == 4):
-		if d != null:
-			remove_child(d)
-		d= dialogue.instantiate()
-		d.messages = [ "Try to complete the level", "the blood moon is rising once again"]
-		add_child(d)
-		current_dialogue+=1
+	
+	
+	
 
 
 	
@@ -197,6 +172,13 @@ func respawn():
 	else:
 		self.position = spawn
 	
+	
+func say(txt):
+	if d != null:
+		remove_child(d)
+	d= dialogue.instantiate()
+	d.messages = txt
+	add_child(d)
 
 
 func _on_pre_jump_window_timer_timeout():
