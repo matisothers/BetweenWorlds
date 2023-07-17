@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://mymj0wih086" path="res://resources/fonts/1/Beholden-Bold.ttf" id="1_62guv"]
 [ext_resource type="Script" path="res://ui/movingbackgroundmenu.gd" id="2_ivpg3"]
 [ext_resource type="Texture2D" uid="uid://wetjf58ccjvo" path="res://pexels-eberhard-grossgasteiger-2088170.jpg" id="3_s0btf"]
-[ext_resource type="AudioStream" uid="uid://dkcthbyxr47vo" path="res://TITLE_SCREEN.wav" id="4_hq51s"]
+[ext_resource type="AudioStream" uid="uid://bkgjbaav5o7ni" path="res://TITLE_SCREEN2.wav" id="4_j7q8a"]
 
 [sub_resource type="Animation" id="Animation_hw6wx"]
 length = 20.0
@@ -179,6 +179,6 @@ scale_amount_max = 6.0
 color = Color(0.878431, 0, 0.290196, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_hq51s")
+stream = ExtResource("4_j7q8a")
 volume_db = -11.795
 autoplay = true
