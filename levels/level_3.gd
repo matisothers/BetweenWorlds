@@ -33,6 +33,8 @@ func _ready():
 		margins.get_node("sup_izq").global_position,
 		margins.get_node("inf_der").global_position
 	)
+	var messages = ["Well Done!","Remember you can Dash in all directions!","That includes UP!"]
+	player.say(messages)
 	
 	maps[0].tile_set.set("physics_layer_0/collision_layer", 17)
 	maps[1].tile_set.set("physics_layer_0/collision_layer", 16)
