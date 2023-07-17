@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://ch7ftewv4fnuq"]
+[gd_scene load_steps=25 format=3 uid="uid://ch7ftewv4fnuq"]
 
 [ext_resource type="Script" path="res://levels/level2.gd" id="1_aqgks"]
 [ext_resource type="Texture2D" uid="uid://dlfoqt5mu4qm8" path="res://Background_resources/fondo_juego/Urban-landscape-files/layers/buildings-layer.png" id="3_j417g"]
@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="12_xrlpq"]
 [ext_resource type="PackedScene" uid="uid://cffi74ndxnh4i" path="res://scenes/checkpoint.tscn" id="14_k7qhr"]
 [ext_resource type="PackedScene" uid="uid://vdoqkplcmca" path="res://to_next_level.tscn" id="14_lkbta"]
+[ext_resource type="AudioStream" uid="uid://d0ppheds150id" path="res://resources/soundeff/Bubble heavy 2.wav" id="15_twi1b"]
+[ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="16_jersb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh4yu"]
 texture = ExtResource("8_w7xqi")
@@ -3340,3 +3342,12 @@ scale = Vector2(1.56, 1.626)
 
 [node name="to_next_level" parent="." instance=ExtResource("14_lkbta")]
 position = Vector2(569, 2622)
+
+[node name="cant_change_world_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_twi1b")
+bus = &"sound_eff"
+
+[node name="change_world_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_jersb")
+volume_db = -17.641
+bus = &"sound_eff"

@@ -46,7 +46,7 @@ func _physics_process(delta):
 	
 	# dialogos
 	if (player.position.x >=200 and current_dialogue == 1):
-		messages = ["Hey you're doinig it right", "Now try climbing walls", "Press C next to a wall in the air", "Or just jump again"]
+		messages = ["Hey you're doing it right", "Now try climbing walls", "Press C next to a wall in the air", "Or just jump again"]
 		player.say(messages)
 		current_dialogue+=1
 	

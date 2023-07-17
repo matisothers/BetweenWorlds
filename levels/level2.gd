@@ -11,6 +11,8 @@ var can_change = true
 @onready var right = margins.get_node("inf_der").global_position.x
 @onready var fondo_juego = $fondo_lv2_nature
 @onready var parallax_background = $fondo_lv2_futuristic
+@onready var cant_change_world_sound = $cant_change_world_sound
+@onready var change_world_sound = $change_world_sound
 
 
 
@@ -51,9 +53,11 @@ func _physics_process(delta):
 		world =  (world + 1) % 2
 		maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
 		if player.get_node("AntiClipingZone").has_overlapping_bodies():
+			cant_change_world_sound.play()
 			world =  (world + 1) % 2
 			maps[world].tile_set.set("physics_layer_0/collision_layer", 17)
 		else:
+			change_world_sound.play()
 			if 	fondo_juego.visible == false:
 				fondo_juego.visible = true
 				parallax_background.visible =false 

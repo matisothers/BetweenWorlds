@@ -20,6 +20,8 @@ func update(delta):
 	return null
 	
 func enter_state():
+	if Player.movement_input.x == 0:
+		Player.velocity.x = 0
 	playback.travel("idle")
 	Player.can_dash = true
 	
