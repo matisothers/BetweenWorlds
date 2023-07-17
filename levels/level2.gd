@@ -28,6 +28,12 @@ func _ready():
 		margins.get_node("inf_der").global_position
 	)
 	
+	# dialogos
+	
+	var messages = ["Its gonna be more difficult from here on out!", "Do try to keep up","You can feel it cant you","A new power surges in you","Press Z to use this power","Use it to evade the Spikes!!"]
+	player.say(messages)
+	
+	
 	maps[0].tile_set.set("physics_layer_0/collision_layer", 17)
 	maps[1].tile_set.set("physics_layer_0/collision_layer", 16)
 	maps[0].modulate.a = 1
@@ -37,6 +43,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	
+	
 	
 	if Input.is_action_just_pressed("change") and can_change:
 		can_change = false
