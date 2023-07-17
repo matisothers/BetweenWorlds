@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ccv5775gh0xv7"]
+[gd_scene load_steps=26 format=3 uid="uid://ccv5775gh0xv7"]
 
 [ext_resource type="Script" path="res://levels/level_3.gd" id="1_npj8q"]
 [ext_resource type="PackedScene" uid="uid://dnoaoh7rlc07c" path="res://scenes/fondo_juego.tscn" id="1_puxv4"]
@@ -11,11 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://11m50vu2slo3" path="res://resources/stringstar fields/tileset.png" id="8_ple71"]
 [ext_resource type="Texture2D" uid="uid://kndkbjrp7ay3" path="res://Background_resources/fondo_juego/test/files/Tileset.png" id="9_8ub8v"]
 [ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="10_abt13"]
-[ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="11_0dsi4"]
+[ext_resource type="AudioStream" uid="uid://b5tje46tqcdq8" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.ogg" id="12_f4sw8"]
 [ext_resource type="AudioStream" uid="uid://d0ppheds150id" path="res://resources/soundeff/Bubble heavy 2.wav" id="12_pvoqa"]
 [ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="13_a0grm"]
 [ext_resource type="PackedScene" uid="uid://cffi74ndxnh4i" path="res://scenes/checkpoint.tscn" id="14_5antf"]
 [ext_resource type="PackedScene" uid="uid://vdoqkplcmca" path="res://to_next_level.tscn" id="15_ih0h1"]
+[ext_resource type="PackedScene" uid="uid://chvxkt0ya58jw" path="res://ui/spikes.tscn" id="17_g8pye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eh4yu"]
 texture = ExtResource("7_oelss")
@@ -2990,7 +2991,7 @@ scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_irbcv")
 cell_quadrant_size = 68
 format = 2
-layer_0/tile_data = PackedInt32Array(2031624, 851968, 3, 2031625, 983040, 3, 2031626, 983040, 3, 2031627, 917504, 3, 2031628, 983040, 3, 2031629, 917504, 3, 2031630, 983040, 3, 2031631, 917504, 3, 2031632, 983040, 3, 2031633, 983040, 3, 2031634, 983040, 3, 2031635, 1114112, 3, 786478, 1114112, 3, 786477, 917504, 3, 786476, 983040, 3, 786475, 1048576, 3, 786474, 983040, 3, 786473, 1048576, 3, 786472, 983040, 3, 786471, 983040, 3, 786470, 851968, 3, 2031654, 327680, 4, 1966118, 327680, 3, 1900582, 327680, 3, 1835046, 327680, 3, 1769510, 327680, 3, 1703974, 327680, 3, 1638438, 327680, 3, 1572902, 327680, 3, 1507366, 327680, 3, 1441830, 327680, 3, 1376294, 327680, 3, 1310758, 327680, 3, 1245222, 327680, 3, 1179686, 327680, 3, 1114150, 327680, 3, 1048614, 327680, 3, 983078, 327680, 3, 917542, 327680, 3, 852006, 327680, 3)
+layer_0/tile_data = PackedInt32Array(2031624, 851968, 3, 2031625, 983040, 3, 2031626, 983040, 3, 2031627, 917504, 3, 2031628, 983040, 3, 2031629, 917504, 3, 2031630, 983040, 3, 2031631, 917504, 3, 2031632, 983040, 3, 2031633, 983040, 3, 2031634, 983040, 3, 2031635, 1114112, 3, 786478, 1114112, 3, 786477, 983040, 3, 786476, 983040, 3, 786475, 1048576, 3, 786474, 917504, 3, 786473, 851968, 3, 1638441, 327680, 3, 1572905, 327680, 3, 1507369, 327680, 3, 1441833, 327680, 3, 1376297, 327680, 3, 1310761, 327680, 3, 1245225, 327680, 3, 1179689, 327680, 3, 1114153, 327680, 3, 1048617, 327680, 3, 983081, 327680, 3, 917545, 327680, 3, 852009, 327680, 3, 2031657, 327680, 4, 1966121, 327680, 3, 1900585, 327680, 3, 1835049, 327680, 3, 1769513, 327680, 3, 1703977, 327680, 3, 786591, 327680, 4)
 
 [node name="TileMap_Nature" type="TileMap" parent="."]
 modulate = Color(1, 0.615686, 1, 1)
@@ -3033,7 +3034,7 @@ scale = Vector2(-3.78036, 39.7006)
 position = Vector2(2634, 650)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_0dsi4")
+stream = ExtResource("12_f4sw8")
 volume_db = -20.0
 pitch_scale = 0.6
 autoplay = true
@@ -3075,4 +3076,26 @@ position = Vector2(1160, 536)
 position = Vector2(1490, 421)
 
 [node name="to_next_level" parent="." instance=ExtResource("15_ih0h1")]
-position = Vector2(2563, 222)
+position = Vector2(979, 528)
+
+[node name="spikes" type="Node2D" parent="."]
+
+[node name="spikes2" parent="spikes" instance=ExtResource("17_g8pye")]
+position = Vector2(642, 479)
+rotation = -1.5708
+
+[node name="spikes3" parent="spikes" instance=ExtResource("17_g8pye")]
+position = Vector2(642, 415)
+rotation = -1.5708
+
+[node name="spikes4" parent="spikes" instance=ExtResource("17_g8pye")]
+position = Vector2(642, 351)
+rotation = -1.5708
+
+[node name="spikes5" parent="spikes" instance=ExtResource("17_g8pye")]
+position = Vector2(642, 287)
+rotation = -1.5708
+
+[node name="spikes6" parent="spikes" instance=ExtResource("17_g8pye")]
+position = Vector2(642, 223)
+rotation = -1.5708

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://11m50vu2slo3" path="res://resources/stringstar fields/tileset.png" id="9_oifmu"]
 [ext_resource type="Texture2D" uid="uid://kndkbjrp7ay3" path="res://Background_resources/fondo_juego/test/files/Tileset.png" id="10_sl0sg"]
 [ext_resource type="PackedScene" uid="uid://deyxggi7limtc" path="res://state_machine/Player.tscn" id="11_gp425"]
-[ext_resource type="AudioStream" uid="uid://cti5k4tex66cp" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.wav" id="12_54huc"]
+[ext_resource type="AudioStream" uid="uid://b5tje46tqcdq8" path="res://futuristic/cyberpunk city 2 files/Music/cyberpunk city 2.ogg" id="12_f4etx"]
 [ext_resource type="AudioStream" uid="uid://d0ppheds150id" path="res://resources/soundeff/Bubble heavy 2.wav" id="13_3onor"]
 [ext_resource type="AudioStream" uid="uid://cx56hewj0g2f5" path="res://resources/soundeff/Balloon start riding 2.wav" id="14_rdqup"]
 [ext_resource type="PackedScene" uid="uid://cffi74ndxnh4i" path="res://scenes/checkpoint.tscn" id="15_efw76"]
@@ -3033,7 +3033,7 @@ scale = Vector2(-3.78036, 39.7006)
 position = Vector2(3102, 639)
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_54huc")
+stream = ExtResource("12_f4etx")
 volume_db = -20.0
 pitch_scale = 0.6
 autoplay = true

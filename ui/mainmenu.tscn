@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://wetjf58ccjvo" path="res://pexels-eberhard-grossgasteiger-2088170.jpg" id="3_6s4fw"]
 [ext_resource type="Script" path="res://ui/VBoxContainer.gd" id="3_xc0bm"]
 [ext_resource type="FontFile" uid="uid://mymj0wih086" path="res://resources/fonts/1/Beholden-Bold.ttf" id="5_b72kn"]
-[ext_resource type="AudioStream" uid="uid://dkcthbyxr47vo" path="res://TITLE_SCREEN.wav" id="6_1lceq"]
+[ext_resource type="AudioStream" uid="uid://bkgjbaav5o7ni" path="res://TITLE_SCREEN2.wav" id="6_hjov3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w82qa"]
 bg_color = Color(0, 0.662745, 0.827451, 0)
@@ -150,7 +150,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_1lceq")
+stream = ExtResource("6_hjov3")
 volume_db = -11.795
 autoplay = true
 
