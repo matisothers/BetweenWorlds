@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu17qbppyqx4k"]
+[gd_scene load_steps=8 format=3 uid="uid://bu17qbppyqx4k"]
 
 [ext_resource type="FontFile" uid="uid://mymj0wih086" path="res://resources/fonts/1/Beholden-Bold.ttf" id="1_62guv"]
+[ext_resource type="Script" path="res://ui/movingbackgroundmenu.gd" id="2_ivpg3"]
+[ext_resource type="Texture2D" uid="uid://wetjf58ccjvo" path="res://pexels-eberhard-grossgasteiger-2088170.jpg" id="3_s0btf"]
+[ext_resource type="AudioStream" uid="uid://dkcthbyxr47vo" path="res://TITLE_SCREEN.wav" id="4_hq51s"]
 
 [sub_resource type="Animation" id="Animation_hw6wx"]
 length = 20.0
@@ -52,7 +55,7 @@ horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer"]
-modulate = Color(0.988235, 0.72549, 0.737255, 1)
+modulate = Color(0.878431, 0.239216, 0.34902, 1)
 custom_minimum_size = Vector2(1150, 1080)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -140,3 +143,42 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_4wlsa")
 }
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-2.08165e-12, -2.08165e-12)
+motion_mirroring = Vector2(2304, 2.08165e-12)
+script = ExtResource("2_ivpg3")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-2.60727e-12, 1.19209e-07)
+scale = Vector2(0.903, 0.337)
+texture = ExtResource("3_s0btf")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1152, 2.08165e-12)
+scale = Vector2(0.9, 0.337)
+texture = ExtResource("3_s0btf")
+centered = false
+flip_h = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+modulate = Color(1, 0.403922, 0.701961, 1)
+self_modulate = Color(0.701961, 0.32549, 0.498039, 1)
+position = Vector2(562, 4)
+scale = Vector2(13.96, 12.96)
+amount = 5000
+lifetime = 9.0
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+gravity = Vector2(-200, 980)
+scale_amount_min = 0.0
+scale_amount_max = 6.0
+color = Color(0.878431, 0, 0.290196, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hq51s")
+volume_db = -11.795
+autoplay = true
